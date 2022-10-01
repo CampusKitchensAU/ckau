@@ -16,6 +16,7 @@ const MainContainer = ({
   return (
     <Box
       sx={{
+        bgcolor: '#EFEBE0',
         flexGrow: 1,
         padding: theme.spacing(3),
         transition: theme.transitions.create('margin', {
