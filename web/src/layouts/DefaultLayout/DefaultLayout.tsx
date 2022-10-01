@@ -1,6 +1,13 @@
 import { useState } from 'react'
 
-import { ChevronLeft, ChevronRight, Menu } from '@mui/icons-material'
+import {
+  ChevronLeft,
+  ChevronRight,
+  Facebook,
+  Instagram,
+  Mail,
+  Menu,
+} from '@mui/icons-material'
 import {
   Box,
   CssBaseline,
@@ -31,19 +38,47 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
     <Box>
       <CssBaseline />
       <AppBar open={drawerOpen} drawerWidth={drawerWidth} theme={theme}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={() => setDrawerOpen(true)}
-            edge="start"
-            sx={{ mr: 2, ...(drawerOpen && { display: 'none' }) }}
-          >
-            <Menu />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
+        <Toolbar sx={{ width: '100%', justifyContent: 'space-between' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={() => setDrawerOpen(true)}
+              edge="start"
+              sx={{ mr: 2, ...(drawerOpen && { display: 'none' }) }}
+            >
+              <Menu />
+            </IconButton>
+            <Typography variant="h6" noWrap component="div">
+              Menu
+            </Typography>
+          </Box>
+          <Typography variant="h5" noWrap component="div" fontWeight="bold">
             CKAU
           </Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <IconButton
+              href="https://www.instagram.com/campuskitchen_au/"
+              target="_blank"
+              rel="noopener"
+            >
+              <Instagram sx={{ color: 'rgba(0,0,0,1)' }} />
+            </IconButton>
+            <IconButton
+              href="https://m.facebook.com/TheCampusKitchenAU/"
+              target="_blank"
+              rel="noopener"
+            >
+              <Facebook sx={{ color: 'rgba(0,0,0,1)' }} />
+            </IconButton>
+            <IconButton
+              href="mailto:theckau@gmail.com"
+              target="_blank"
+              rel="noopener"
+            >
+              <Mail sx={{ color: 'rgba(0,0,0,1)' }} />
+            </IconButton>
+          </Box>
         </Toolbar>
       </AppBar>
       <Drawer
