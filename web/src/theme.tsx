@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material'
+import { createTheme, responsiveFontSizes } from '@mui/material'
 
 declare module '@mui/material/styles' {
   interface Palette {
@@ -11,16 +11,18 @@ declare module '@mui/material/styles' {
   }
 }
 
-const theme = createTheme({
+let theme = createTheme({
   palette: {
     primary: {
       main: '#EFEBE0',
     },
     auburnOrange: {
       main: '#dd550c',
+      contrastText: '#ffffff',
     },
     auburnBlue: {
       main: '#03244d',
+      contrastText: '#ffffff',
     },
   },
   typography: {
@@ -38,5 +40,7 @@ const theme = createTheme({
     },
   },
 })
+
+theme = responsiveFontSizes(theme)
 
 export default theme
