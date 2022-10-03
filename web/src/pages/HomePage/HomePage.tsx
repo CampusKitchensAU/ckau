@@ -1,5 +1,5 @@
 import { AccessTime, Handshake, Restaurant, Scale } from '@mui/icons-material'
-import { Box, Divider, Typography, useTheme } from '@mui/material'
+import { Box, Button, Divider, Typography, useTheme } from '@mui/material'
 
 import { MetaTags } from '@redwoodjs/web'
 
@@ -49,9 +49,7 @@ const HomePage = () => {
           paddingBottom: 4,
         }}
       >
-        <Typography variant="h1" maxWidth={400}>
-          The Campus Kitchen at Auburn
-        </Typography>
+        <Typography variant="h1">The Campus Kitchen at Auburn</Typography>
         <Divider
           orientation="vertical"
           variant="middle"
@@ -64,15 +62,15 @@ const HomePage = () => {
         <img
           src="img/ExecTeam1.jpg"
           alt="Executive Team"
-          width="100%"
-          height="auto"
           style={{
-            maxWidth: '1000px',
+            width: '100%',
+            maxWidth: '700px',
+            height: 'auto',
           }}
         />
       </Box>
       <Box
-        sx={{ width: '100%', p: 4, bgcolor: theme.palette.auburnOrange.main }}
+        sx={{ width: '100%', p: 3, bgcolor: theme.palette.auburnOrange.main }}
       >
         <Typography variant="h3" textAlign="center">
           &quot;Fighting food waste and hunger in the East Central Alabama
@@ -159,6 +157,37 @@ const HomePage = () => {
             )
           })}
         </Box>
+      </Box>
+      {/** Volunteer Section */}
+      <Box sx={{ display: 'flex', py: 4, px: 8, gap: 8, alignItems: 'center' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+          <Box component={'div'}>
+            <Typography variant="h4" fontWeight="bold">
+              Volunteer with us!
+            </Typography>
+            <Typography variant="h6">
+              Looking to join the fight against hunger? Click the link below to
+              find volunteer opportunities!
+            </Typography>
+          </Box>
+          <Button
+            sx={{
+              bgcolor: theme.palette.auburnOrange.main,
+              '&:hover': { bgcolor: theme.palette.auburnBlue.main },
+            }}
+          >
+            Sign Up Here!
+          </Button>
+        </Box>
+        <img
+          src="img/VolunteerKitchen1.jpg"
+          alt="Volunteers in Kitchen"
+          style={{
+            width: '100%',
+            maxWidth: '550px',
+            height: 'auto',
+          }}
+        />
       </Box>
     </>
   )
