@@ -5,9 +5,16 @@ type AppBarProps = {
   drawerWidth: number
   theme: Theme
   children?: React.ReactNode
+  mobile: boolean
 }
 
-const AppBar = ({ open, drawerWidth, theme, children }: AppBarProps) => {
+const AppBar = ({
+  open,
+  drawerWidth,
+  theme,
+  children,
+  mobile,
+}: AppBarProps) => {
   return (
     <MuiAppBar
       position="fixed"
@@ -16,14 +23,15 @@ const AppBar = ({ open, drawerWidth, theme, children }: AppBarProps) => {
           easing: theme.transitions.easing.sharp,
           duration: theme.transitions.duration.leavingScreen,
         }),
-        ...(open && {
-          width: `calc(100% - ${drawerWidth}px)`,
-          marginLeft: `${drawerWidth}px`,
-          transition: theme.transitions.create(['margin', 'width'], {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
+        ...(open &&
+          !mobile && {
+            width: `calc(100% - ${drawerWidth}px)`,
+            marginLeft: `${drawerWidth}px`,
+            transition: theme.transitions.create(['margin', 'width'], {
+              easing: theme.transitions.easing.easeOut,
+              duration: theme.transitions.duration.enteringScreen,
+            }),
           }),
-        }),
         right: 'auto',
         width: '100vw',
       }}

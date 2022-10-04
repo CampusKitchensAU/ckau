@@ -6,17 +6,18 @@ import {
   LocationOn,
   Mail,
 } from '@mui/icons-material'
-import {
-  Box,
-  Divider,
-  Link,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from '@mui/material'
+import { Box, Divider, Link, Theme, Typography } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 
 import { routes, Link as RWLink } from '@redwoodjs/router'
+
+type FooterProps = {
+  open: boolean
+  drawerWidth: number
+  theme: Theme
+  children?: React.ReactNode
+  mobile: boolean
+}
 
 //TODO: Make T only be able to be a string or func that returns string
 interface iconLink<T> {
@@ -56,15 +57,25 @@ const siteMapLinks: iconLink<() => string>[] = [
   },
 ]
 
-const Footer = () => {
-  const theme = useTheme()
-  const mobileMatch = useMediaQuery(theme.breakpoints.down('sm'))
-
+const Footer = ({ open, drawerWidth, theme, mobile }: FooterProps) => {
   return (
     <Grid
       container
       component={'footer'}
-      sx={{ p: 2, pb: 8, bgcolor: theme.palette.auburnBlue.main }}
+      sx={{
+        p: 2,
+        pb: 4,
+        bgcolor: theme.palette.auburnBlue.main,
+        ml: 0,
+        ...(open &&
+          !mobile && {
+            transition: theme.transitions.create('margin', {
+              easing: theme.transitions.easing.easeOut,
+              duration: theme.transitions.duration.enteringScreen,
+            }),
+            marginLeft: `${drawerWidth}px`,
+          }),
+      }}
     >
       <Grid xs={12}>
         <Grid
@@ -75,7 +86,7 @@ const Footer = () => {
         >
           <Grid xs={12} sm={2}>
             <img
-              src={mobileMatch ? 'img/RectangleLogo.png' : 'img/SquareLogo.png'}
+              src={mobile ? 'img/RectangleLogo.png' : 'img/SquareLogo.png'}
               alt="CKAU Logo"
               style={{
                 width: '100%',
@@ -212,6 +223,7 @@ const Footer = () => {
                   underline="always"
                   display="flex"
                   justifyContent="center"
+                  color={theme.palette.auburnBlue.contrastText}
                 >
                   <LinkedIn /> Trevor Aupperle
                 </Link>
@@ -223,6 +235,7 @@ const Footer = () => {
                   underline="always"
                   display="flex"
                   justifyContent="center"
+                  color={theme.palette.auburnBlue.contrastText}
                 >
                   <LinkedIn /> Ethan Wilkes.
                 </Link>

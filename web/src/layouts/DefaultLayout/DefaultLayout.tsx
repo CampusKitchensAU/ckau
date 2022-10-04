@@ -1,12 +1,16 @@
 import { useState } from 'react'
 
 import {
+  CameraAlt,
   ChevronLeft,
-  ChevronRight,
+  Close,
   Facebook,
+  Groups,
+  Home,
   Instagram,
   Mail,
   Menu,
+  Workspaces,
 } from '@mui/icons-material'
 import {
   Box,
@@ -15,11 +19,17 @@ import {
   Drawer,
   IconButton,
   List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
   Toolbar,
   Typography,
+  useMediaQuery,
   useTheme,
 } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
+
+import { Link, routes } from '@redwoodjs/router'
 
 import AppBar from 'src/components/AppBar/AppBar'
 import DrawerHeader from 'src/components/DrawerHeader/DrawerHeader'
@@ -30,16 +40,53 @@ type DefaultLayoutProps = {
   children?: React.ReactNode
 }
 
-const drawerWidth = 240
+interface pageLink {
+  icon: JSX.Element
+  fn: () => string
+  title: string
+}
+
+const drawerWidth = 280
 
 const DefaultLayout = ({ children }: DefaultLayoutProps) => {
   const theme = useTheme()
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false)
+  const mobileMatch = useMediaQuery(theme.breakpoints.down('sm'))
+
+  const pageLinks: pageLink[] = [
+    {
+      icon: <Home sx={{ color: theme.palette.auburnBlue.contrastText }} />,
+      fn: () => routes.home(),
+      title: 'Home',
+    },
+    {
+      icon: (
+        <Workspaces sx={{ color: theme.palette.auburnBlue.contrastText }} />
+      ),
+      fn: () => routes.home(),
+      title: 'Hunger Fighters',
+    },
+    {
+      icon: <Groups sx={{ color: theme.palette.auburnBlue.contrastText }} />,
+      fn: () => routes.home(),
+      title: 'About Us',
+    },
+    {
+      icon: <CameraAlt sx={{ color: theme.palette.auburnBlue.contrastText }} />,
+      fn: () => routes.home(),
+      title: 'Gallery',
+    },
+  ]
 
   return (
     <Box>
       <CssBaseline />
-      <AppBar open={drawerOpen} drawerWidth={drawerWidth} theme={theme}>
+      <AppBar
+        open={drawerOpen}
+        drawerWidth={drawerWidth}
+        theme={theme}
+        mobile={mobileMatch}
+      >
         <Toolbar
           sx={{
             px: 2,
@@ -104,30 +151,85 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
       </AppBar>
       <Drawer
         sx={{
-          width: drawerWidth,
+          width: mobileMatch ? '100%' : drawerWidth,
           flexShrink: 0,
           '& .MuiDrawer-paper': {
-            width: drawerWidth,
+            width: mobileMatch ? '100%' : drawerWidth,
             boxSizing: 'border-box',
+            bgcolor: theme.palette.auburnBlue.main,
+            height: '100%',
           },
         }}
         variant="persistent"
-        anchor="left"
+        anchor={mobileMatch ? 'top' : 'left'}
         open={drawerOpen}
       >
         <DrawerHeader theme={theme}>
+          <img
+            src="img/RectangleLogo-removedbg.png"
+            alt="Auburn Involve Logo"
+            style={{
+              width: 'auto',
+              height: '56px',
+            }}
+          />
           <IconButton onClick={() => setDrawerOpen(false)}>
-            {theme.direction === 'ltr' ? <ChevronLeft /> : <ChevronRight />}
+            {mobileMatch ? <Close /> : <ChevronLeft />}
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List>{/** Put nav list here. */}</List>
+        <List
+          component={'nav'}
+          sx={{
+            bgcolor: theme.palette.auburnBlue.main,
+            [theme.breakpoints.down('sm')]: { height: '100%' },
+          }}
+          disablePadding
+        >
+          {/** Put nav list here. */}
+          {pageLinks.map((link, idx) => {
+            return (
+              <Link
+                to={link.fn()}
+                key={idx}
+                style={{
+                  textDecoration: 'none',
+                  color: theme.palette.auburnBlue.contrastText,
+                }}
+                onClick={() => setDrawerOpen(false)}
+              >
+                <ListItem
+                  sx={{
+                    '&:hover': {
+                      bgcolor: theme.palette.auburnOrange.main,
+                    },
+                  }}
+                >
+                  <ListItemIcon sx={{ justifyContent: 'center' }}>
+                    {link.icon}
+                  </ListItemIcon>
+                  <ListItemText primary={link.title} />
+                </ListItem>
+              </Link>
+            )
+          })}
+        </List>
       </Drawer>
-      <MainContainer open={drawerOpen} drawerWidth={drawerWidth} theme={theme}>
+      <MainContainer
+        open={drawerOpen}
+        drawerWidth={drawerWidth}
+        theme={theme}
+        mobile={mobileMatch}
+      >
         <DrawerHeader theme={theme} />
         {children}
       </MainContainer>
-      <Footer />
+      <Footer
+        open={drawerOpen}
+        drawerWidth={drawerWidth}
+        theme={theme}
+        mobile={mobileMatch}
+      />
     </Box>
   )
 }

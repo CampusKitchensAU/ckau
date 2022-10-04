@@ -5,6 +5,7 @@ type MainContainerProps = {
   drawerWidth: number
   theme: Theme
   children?: React.ReactNode
+  mobile: boolean
 }
 
 const MainContainer = ({
@@ -12,6 +13,7 @@ const MainContainer = ({
   drawerWidth,
   theme,
   children,
+  mobile,
 }: MainContainerProps) => {
   return (
     <Box
@@ -24,13 +26,14 @@ const MainContainer = ({
           duration: theme.transitions.duration.leavingScreen,
         }),
         marginLeft: 0,
-        ...(open && {
-          transition: theme.transitions.create('margin', {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
+        ...(open &&
+          !mobile && {
+            transition: theme.transitions.create('margin', {
+              easing: theme.transitions.easing.easeOut,
+              duration: theme.transitions.duration.enteringScreen,
+            }),
+            marginLeft: `${drawerWidth}px`,
           }),
-          marginLeft: `${drawerWidth}px`,
-        }),
       }}
     >
       {children}

@@ -13,7 +13,9 @@ const DrawerHeader = ({ theme, children }: DrawerHeaderProps) => {
         alignItems: 'center',
         padding: theme.spacing(0, 1),
         ...theme.mixins.toolbar,
-        justifyContent: 'flex-end',
+        justifyContent: 'space-between',
+        pl: 2,
+        bgcolor: theme.palette.primary.main,
       }}
     >
       {children}
