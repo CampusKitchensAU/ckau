@@ -183,7 +183,7 @@ const HomePage = () => {
           </Button>
         </Box>
         <img
-          src="img/VolunteerKitchen1.jpg"
+          src="img/KitchenVolunteer1.jpg"
           alt="Volunteers in Kitchen"
           style={{
             width: '100%',
