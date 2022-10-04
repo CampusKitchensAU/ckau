@@ -19,6 +19,7 @@ import {
   Typography,
   useTheme,
 } from '@mui/material'
+import Grid from '@mui/material/Unstable_Grid2'
 
 import AppBar from 'src/components/AppBar/AppBar'
 import DrawerHeader from 'src/components/DrawerHeader/DrawerHeader'
@@ -39,47 +40,66 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
     <Box>
       <CssBaseline />
       <AppBar open={drawerOpen} drawerWidth={drawerWidth} theme={theme}>
-        <Toolbar sx={{ width: '100%', justifyContent: 'space-between' }}>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={() => setDrawerOpen(true)}
-              edge="start"
-              sx={{ mr: 2, ...(drawerOpen && { display: 'none' }) }}
-            >
-              <Menu />
-            </IconButton>
-            <Typography variant="h6" noWrap component="div">
-              Menu
-            </Typography>
-          </Box>
-          <Typography variant="h5" noWrap component="div" fontWeight="bold">
-            CKAU
-          </Typography>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <IconButton
-              href="https://www.instagram.com/campuskitchen_au/"
-              target="_blank"
-              rel="noopener"
-            >
-              <Instagram sx={{ color: 'rgba(0,0,0,1)' }} />
-            </IconButton>
-            <IconButton
-              href="https://m.facebook.com/TheCampusKitchenAU/"
-              target="_blank"
-              rel="noopener"
-            >
-              <Facebook sx={{ color: 'rgba(0,0,0,1)' }} />
-            </IconButton>
-            <IconButton
-              href="mailto:theckau@gmail.com"
-              target="_blank"
-              rel="noopener"
-            >
-              <Mail sx={{ color: 'rgba(0,0,0,1)' }} />
-            </IconButton>
-          </Box>
+        <Toolbar
+          sx={{
+            px: 2,
+          }}
+          disableGutters
+        >
+          <Grid container width="100%" alignItems="center">
+            <Grid xs display="flex" alignItems="center">
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                onClick={() => setDrawerOpen(true)}
+                sx={{ ...(drawerOpen && { display: 'none' }) }}
+              >
+                <Menu />
+              </IconButton>
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ [theme.breakpoints.down('sm')]: { display: 'none' } }}
+              >
+                Menu
+              </Typography>
+            </Grid>
+            <Grid xs>
+              <Typography
+                variant="h5"
+                noWrap
+                component="div"
+                fontWeight="bold"
+                textAlign="center"
+              >
+                CKAU
+              </Typography>
+            </Grid>
+            <Grid xs display="flex" justifyContent="end">
+              <IconButton
+                href="https://www.instagram.com/campuskitchen_au/"
+                target="_blank"
+                rel="noopener"
+              >
+                <Instagram sx={{ color: 'rgba(0,0,0,1)' }} />
+              </IconButton>
+              <IconButton
+                href="https://m.facebook.com/TheCampusKitchenAU/"
+                target="_blank"
+                rel="noopener"
+              >
+                <Facebook sx={{ color: 'rgba(0,0,0,1)' }} />
+              </IconButton>
+              <IconButton
+                href="mailto:theckau@gmail.com"
+                target="_blank"
+                rel="noopener"
+              >
+                <Mail sx={{ color: 'rgba(0,0,0,1)' }} />
+              </IconButton>
+            </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
       <Drawer

@@ -24,6 +24,8 @@ const AppBar = ({ open, drawerWidth, theme, children }: AppBarProps) => {
             duration: theme.transitions.duration.enteringScreen,
           }),
         }),
+        right: 'auto',
+        width: '100vw',
       }}
     >
       {children}
