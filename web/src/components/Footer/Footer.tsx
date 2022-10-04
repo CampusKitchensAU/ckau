@@ -10,13 +10,14 @@ import { Box, Divider, Link, Typography, useTheme } from '@mui/material'
 
 import { routes, Link as RWLink } from '@redwoodjs/router'
 
-interface iconLink {
+//TODO: Make T only be able to be a string or func that returns string
+interface iconLink<T> {
   icon: JSX.Element
-  href: string
+  href: T
   title: string
 }
 
-const contactUsLinks: iconLink[] = [
+const contactUsLinks: iconLink<string>[] = [
   {
     icon: <LocationOn />,
     href: 'https://goo.gl/maps/zfLEZ5fABSZF6UULA',
@@ -39,10 +40,10 @@ const contactUsLinks: iconLink[] = [
   },
 ]
 
-const siteMapLinks: iconLink[] = [
+const siteMapLinks: iconLink<() => string>[] = [
   {
     icon: <Home />,
-    href: routes.home(),
+    href: () => routes.home(),
     title: 'Home',
   },
 ]
@@ -81,7 +82,7 @@ const Footer = () => {
           <Typography variant="h6" fontWeight="bold">
             Contact Us
           </Typography>
-          {contactUsLinks.map((link: iconLink, idx: number) => {
+          {contactUsLinks.map((link, idx) => {
             return (
               <Box sx={{ display: 'flex', gap: 1 }} key={idx}>
                 {link.icon}
@@ -101,12 +102,12 @@ const Footer = () => {
           <Typography variant="h6" fontWeight="bold">
             Site Map
           </Typography>
-          {siteMapLinks.map((link: iconLink, idx: number) => {
+          {siteMapLinks.map((link, idx) => {
             return (
               <Box sx={{ display: 'flex', gap: 1 }} key={idx}>
                 {link.icon}
                 <RWLink
-                  to={link.href}
+                  to={link.href()}
                   style={{
                     color: theme.palette.auburnBlue.contrastText,
                     textDecoration: 'none',
