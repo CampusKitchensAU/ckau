@@ -189,7 +189,7 @@ const Footer = () => {
             underline="always"
             display="flex"
           >
-            <LinkedIn /> Ethan Smells.
+            <LinkedIn /> Ethan Wilkes.
           </Link>
         </Typography>
         <Typography>Fork Hunger!</Typography>
