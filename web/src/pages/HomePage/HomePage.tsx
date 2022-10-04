@@ -175,6 +175,9 @@ const HomePage = () => {
               bgcolor: theme.palette.auburnOrange.main,
               '&:hover': { bgcolor: theme.palette.auburnBlue.main },
             }}
+            href="https://signup.com/group/1225782704046"
+            target="_blank"
+            rel="noopener"
           >
             Sign Up Here!
           </Button>

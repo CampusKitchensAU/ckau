@@ -22,6 +22,7 @@ import {
 
 import AppBar from 'src/components/AppBar/AppBar'
 import DrawerHeader from 'src/components/DrawerHeader/DrawerHeader'
+import Footer from 'src/components/Footer/Footer'
 import MainContainer from 'src/components/MainContainer/MainContainer'
 
 type DefaultLayoutProps = {
@@ -106,6 +107,7 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
         <DrawerHeader theme={theme} />
         {children}
       </MainContainer>
+      <Footer />
     </Box>
   )
 }
