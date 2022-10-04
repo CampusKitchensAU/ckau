@@ -1,5 +1,13 @@
 import { AccessTime, Handshake, Restaurant, Scale } from '@mui/icons-material'
-import { Box, Button, Divider, Typography, useTheme } from '@mui/material'
+import {
+  Box,
+  Button,
+  Divider,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material'
+import Grid from '@mui/material/Unstable_Grid2'
 
 import { MetaTags } from '@redwoodjs/web'
 
@@ -34,41 +42,54 @@ const mainStats: mainStat[] = [
 
 const HomePage = () => {
   const theme = useTheme()
+  const mobileMatch = useMediaQuery(theme.breakpoints.down('sm'))
 
   return (
     <>
       <MetaTags title="Home" description="Home page" />
       {/** Hero Section */}
-      <Box
+      <Grid
+        container
+        rowGap={2}
+        alignItems="center"
+        justifyContent="center"
         sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          gap: 8,
           px: 8,
           paddingBottom: 4,
+          [theme.breakpoints.down('sm')]: { px: 4 },
         }}
       >
-        <Typography variant="h1">The Campus Kitchen at Auburn</Typography>
+        <Grid xs={12} sm={4}>
+          <Typography
+            variant="h1"
+            sx={{ [theme.breakpoints.down('sm')]: { textAlign: 'center' } }}
+          >
+            The Campus Kitchen at Auburn
+          </Typography>
+        </Grid>
         <Divider
-          orientation="vertical"
+          orientation={mobileMatch ? 'horizontal' : 'vertical'}
           variant="middle"
           flexItem
           sx={{
             borderRightWidth: 3,
             background: theme.palette.auburnBlue.main,
+            mr: mobileMatch ? 2 : 4,
+            width: mobileMatch ? '100%' : 'auto',
           }}
         />
-        <img
-          src="img/ExecTeam1.jpg"
-          alt="Executive Team"
-          style={{
-            width: '100%',
-            maxWidth: '700px',
-            height: 'auto',
-          }}
-        />
-      </Box>
+        <Grid xs={12} sm={6}>
+          <img
+            src="img/ExecTeam1.jpg"
+            alt="Executive Team"
+            style={{
+              width: '100%',
+              height: 'auto',
+            }}
+          />
+        </Grid>
+      </Grid>
+
       <Box
         sx={{ width: '100%', p: 3, bgcolor: theme.palette.auburnOrange.main }}
       >
@@ -78,22 +99,23 @@ const HomePage = () => {
         </Typography>
       </Box>
       {/** Welcome Statement */}
-      <Box
+      <Grid
+        container
+        rowGap={2}
+        columnSpacing={mobileMatch ? 0 : 3}
         sx={{
           width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
           px: 8,
           py: 4,
-          gap: 2,
+          [theme.breakpoints.down('sm')]: { px: 4, textAlign: 'center' },
         }}
       >
-        <Typography variant="h4" fontWeight="bold">
-          Welcome to the Campus Kitchen!
-        </Typography>
-        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 4 }}>
+        <Grid xs={12}>
+          <Typography variant="h4" fontWeight="bold" textAlign="center">
+            Welcome to the Campus Kitchen!
+          </Typography>
+        </Grid>
+        <Grid xs={12} sm={6}>
           <Typography variant="h6">
             Whether you&apos;re in walking distance to Toomer&apos;s Residence
             Hall Basement or browsing from miles away, we&apos;re so glad
@@ -103,6 +125,8 @@ const HomePage = () => {
             campus dining locations and serves it to members of our community.
             We fight food waste and hunger all at once!
           </Typography>
+        </Grid>
+        <Grid xs={12} sm={6}>
           <Typography variant="h6">
             Founded in 2014 as Auburn&apos;s chapter of the Campus Kitchens
             Project by DC Central Kitchen (a national initiative that encouraged
@@ -114,84 +138,108 @@ const HomePage = () => {
             160,746 pounds of food and served 153,400 meals to members of Lee
             County. Here&apos;s to many more!
           </Typography>
-        </Box>
-      </Box>
+        </Grid>
+      </Grid>
       {/** Live Statistics */}
-      <Box
+      <Grid
+        container
+        rowGap={2}
         sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
           px: 8,
           py: 4,
           bgcolor: theme.palette.auburnBlue.main,
           color: theme.palette.auburnBlue.contrastText,
-          gap: 2,
         }}
       >
-        <Typography variant="h4" fontWeight="bold">
-          Live 2022 Statistics
-        </Typography>
-        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 8 }}>
-          {mainStats.map((stat: mainStat, idx: number) => {
-            return (
-              <Box
-                key={idx}
-                sx={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                }}
+        <Grid xs={12}>
+          <Typography variant="h4" fontWeight="bold" textAlign="center">
+            Live 2022 Statistics
+          </Typography>
+        </Grid>
+        {mainStats.map((stat: mainStat, idx: number) => {
+          return (
+            <Grid
+              key={idx}
+              xs={12}
+              sm={3}
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+              }}
+            >
+              {stat.icon}
+              <Typography
+                variant="h3"
+                color={theme.palette.auburnOrange.main}
+                fontWeight="bold"
               >
-                {stat.icon}
-                <Typography
-                  variant="h3"
-                  color={theme.palette.auburnOrange.main}
-                  fontWeight="bold"
-                >
-                  {stat.data}
+                {stat.data}
+              </Typography>
+              <Typography variant="h4" textAlign="center">
+                {stat.title}
+              </Typography>
+            </Grid>
+          )
+        })}
+      </Grid>
+      <Grid
+        container
+        rowGap={2}
+        columnSpacing={mobileMatch ? 0 : 4}
+        alignItems="center"
+        justifyContent="center"
+        sx={{
+          px: 8,
+          py: 4,
+          [theme.breakpoints.down('sm')]: { px: 4, textAlign: 'center' },
+        }}
+      >
+        <Grid xs={12} sm={6}>
+          <Grid container rowGap={2}>
+            <Grid xs={12}>
+              <Grid container>
+                <Grid xs={12}>
+                  <Typography variant="h4" fontWeight="bold">
+                    Volunteer with us!
+                  </Typography>
+                </Grid>
+              </Grid>
+              <Grid xs={12}>
+                <Typography variant="h6">
+                  Looking to join the fight against hunger? Click the link below
+                  to find volunteer opportunities!
                 </Typography>
-                <Typography variant="h4">{stat.title}</Typography>
-              </Box>
-            )
-          })}
-        </Box>
-      </Box>
-      {/** Volunteer Section */}
-      <Box sx={{ display: 'flex', py: 4, px: 8, gap: 8, alignItems: 'center' }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-          <Box component={'div'}>
-            <Typography variant="h4" fontWeight="bold">
-              Volunteer with us!
-            </Typography>
-            <Typography variant="h6">
-              Looking to join the fight against hunger? Click the link below to
-              find volunteer opportunities!
-            </Typography>
-          </Box>
-          <Button
-            sx={{
-              bgcolor: theme.palette.auburnOrange.main,
-              '&:hover': { bgcolor: theme.palette.auburnBlue.main },
+              </Grid>
+            </Grid>
+            <Grid xs={12}>
+              <Button
+                fullWidth
+                sx={{
+                  bgcolor: theme.palette.auburnOrange.main,
+                  '&:hover': { bgcolor: theme.palette.auburnBlue.main },
+                }}
+                href="https://signup.com/group/1225782704046"
+                target="_blank"
+                rel="noopener"
+              >
+                Sign Up Here!
+              </Button>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid xs={12} sm={4}>
+          <img
+            src="img/KitchenVolunteer1.jpg"
+            alt="Volunteers in Kitchen"
+            style={{
+              width: '100%',
+              height: 'auto',
             }}
-            href="https://signup.com/group/1225782704046"
-            target="_blank"
-            rel="noopener"
-          >
-            Sign Up Here!
-          </Button>
-        </Box>
-        <img
-          src="img/KitchenVolunteer1.jpg"
-          alt="Volunteers in Kitchen"
-          style={{
-            width: '100%',
-            maxWidth: '550px',
-            height: 'auto',
-          }}
-        />
-      </Box>
+          />
+        </Grid>
+      </Grid>
+      {/** Volunteer Section */}
     </>
   )
 }
