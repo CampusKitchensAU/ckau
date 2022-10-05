@@ -7,13 +7,23 @@
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route } from '@redwoodjs/router'
+import { ThemeProvider } from '@mui/material'
+
+import { Router, Route, Set } from '@redwoodjs/router'
+
+import DefaultLayout from './layouts/DefaultLayout/DefaultLayout'
+import theme from './theme'
 
 const Routes = () => {
   return (
-    <Router>
-      <Route notfound page={NotFoundPage} />
-    </Router>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Set wrap={DefaultLayout}>
+          <Route path="/" page={HomePage} name="home" />
+        </Set>
+        <Route notfound page={NotFoundPage} />
+      </Router>
+    </ThemeProvider>
   )
 }
 
