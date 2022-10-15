@@ -12,6 +12,7 @@ import { ThemeProvider } from '@mui/material'
 import { Router, Route, Set } from '@redwoodjs/router'
 
 import DefaultLayout from './layouts/DefaultLayout/DefaultLayout'
+import HungerFightersPage from './pages/HungerFightersPage/HungerFightersPage'
 import theme from './theme'
 
 const Routes = () => {
@@ -19,6 +20,7 @@ const Routes = () => {
     <ThemeProvider theme={theme}>
       <Router>
         <Set wrap={DefaultLayout}>
+          <Route path="/hunger-fighters" page={HungerFightersPage} name="hungerFighters" />
           <Route path="/" page={HomePage} name="home" />
         </Set>
         <Route notfound page={NotFoundPage} />
