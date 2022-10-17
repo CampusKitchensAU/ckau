@@ -1,4 +1,5 @@
-import { Box, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
+import Grid from '@mui/material/Unstable_Grid2'
 
 const HorizontalList = ({
   list,
@@ -14,10 +15,10 @@ const HorizontalList = ({
   }
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <>
       {listChunks.map((chunk, idx) => {
         return (
-          <Box component="ul" key={idx}>
+          <Grid component="ul" key={idx} xs={2}>
             {chunk.map((item, idx) => {
               return (
                 <Typography component="li" key={idx}>
@@ -25,10 +26,10 @@ const HorizontalList = ({
                 </Typography>
               )
             })}
-          </Box>
+          </Grid>
         )
       })}
-    </Box>
+    </>
   )
 }
 

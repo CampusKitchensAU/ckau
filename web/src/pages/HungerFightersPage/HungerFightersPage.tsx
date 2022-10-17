@@ -55,8 +55,20 @@ const HungerFightersPage = () => {
             Shift leaders are responsible for regular weekly shifts for a
             semester, as well as training/managing volunteers.
           </Typography>
-          <Box>
-            <HorizontalList list={leadershipTeam} chunkSize={10} />
+          <Box sx={{ px: 4 }}>
+            <Grid container spacing={2}>
+              <HorizontalList list={leadershipTeam} chunkSize={10} />
+              <Grid xs={8}>
+                <img
+                  src="img/leadershipTeamGroup.jpg"
+                  alt="Auburn University Logo"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                  }}
+                />
+              </Grid>
+            </Grid>
           </Box>
         </Box>
       </Box>
