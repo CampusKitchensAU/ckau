@@ -10,7 +10,6 @@ interface executiveMember {
   name: string
   position: string
   img: string
-  gender: 'male' | 'female'
 }
 
 const ExecutiveMemberCard = ({
@@ -25,13 +24,7 @@ const ExecutiveMemberCard = ({
       <CardMedia
         component="img"
         alt={'Headshot of ' + executiveMember.name}
-        image={
-          executiveMember.img == ''
-            ? executiveMember.gender == 'male'
-              ? 'img/businessman.png'
-              : 'img/lady.png'
-            : executiveMember.img
-        }
+        image={executiveMember.img}
       />
       <CardContent>
         <Typography

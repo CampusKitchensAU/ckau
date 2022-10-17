@@ -2,41 +2,39 @@ interface executiveMember {
   name: string
   position: string
   img: string
-  gender: 'male' | 'female'
 }
 
 const executiveTeam: executiveMember[] = [
-  { name: 'Ryan Mumford', position: 'President', img: '', gender: 'male' },
+  { name: 'Ryan Mumford', position: 'President', img: 'img/businessman.png' },
   {
     name: 'Brandon Thomas',
     position: 'VP of Operations',
-    img: '',
-    gender: 'male',
+    img: 'img/businessman.png',
   },
   {
     name: 'Barrett Maloney',
     position: 'VP of Nutritional Programs',
-    img: '',
-    gender: 'female',
+    img: 'img/lady.png',
   },
   {
     name: 'Phillip McCain',
     position: 'VP of Campus Affairs',
-    img: '',
-    gender: 'male',
+    img: 'img/businessman.png',
   },
   {
     name: 'Elise Fitzgerald',
     position: 'VP of Outreach',
-    img: '',
-    gender: 'female',
+    img: 'img/lady.png',
   },
-  { name: 'Owen Harris', position: 'VP of Finance', img: '', gender: 'male' },
+  {
+    name: 'Owen Harris',
+    position: 'VP of Finance',
+    img: 'img/businessman.png',
+  },
   {
     name: 'Teja Ramapuram',
     position: 'VP of Development',
-    img: '',
-    gender: 'male',
+    img: 'img/businessman.png',
   },
 ]
 
