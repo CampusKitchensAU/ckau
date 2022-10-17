@@ -1,9 +1,12 @@
 import { Box, Divider, Typography } from '@mui/material'
+import Grid from '@mui/material/Unstable_Grid2'
 
 import { MetaTags } from '@redwoodjs/web'
 
+import ExecutiveMemberCard from 'src/components/ExecutiveMemberCard/ExecutiveMemberCard'
 import HorizontalList from 'src/components/HorizontalList/HorizontalList'
 import PageHeader from 'src/components/PageHeader/PageHeader'
+import executiveTeam from 'src/data/executiveTeam'
 import leadershipTeam from 'src/data/leadershipTeam'
 import theme from 'src/theme'
 
@@ -27,6 +30,15 @@ const HungerFightersPage = () => {
             communicating with food donors and community partners, and training
             shift leaders.
           </Typography>
+          <Grid container spacing={4} sx={{ mt: 1 }}>
+            {executiveTeam.map((executiveMember, idx) => {
+              return (
+                <Grid xs={3} key={idx}>
+                  <ExecutiveMemberCard executiveMember={executiveMember} />
+                </Grid>
+              )
+            })}
+          </Grid>
         </Box>
         <Divider
           sx={{
@@ -44,7 +56,7 @@ const HungerFightersPage = () => {
             semester, as well as training/managing volunteers.
           </Typography>
           <Box>
-            <HorizontalList list={leadershipTeam} chunkSize={12} />
+            <HorizontalList list={leadershipTeam} chunkSize={10} />
           </Box>
         </Box>
       </Box>
