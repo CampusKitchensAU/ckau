@@ -18,7 +18,7 @@ const HorizontalList = ({
     <>
       {listChunks.map((chunk, idx) => {
         return (
-          <Grid component="ul" key={idx} xs={2}>
+          <Grid component="ul" key={idx} xs={6} md={2} sx={{ py: 0 }}>
             {chunk.map((item, idx) => {
               return (
                 <Typography component="li" key={idx}>

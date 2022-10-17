@@ -33,7 +33,7 @@ const HungerFightersPage = () => {
           <Grid container spacing={4} sx={{ mt: 1 }}>
             {executiveTeam.map((executiveMember, idx) => {
               return (
-                <Grid xs={3} key={idx}>
+                <Grid xs={12} md={3} key={idx}>
                   <ExecutiveMemberCard executiveMember={executiveMember} />
                 </Grid>
               )
@@ -55,10 +55,10 @@ const HungerFightersPage = () => {
             Shift leaders are responsible for regular weekly shifts for a
             semester, as well as training/managing volunteers.
           </Typography>
-          <Box sx={{ px: 4 }}>
-            <Grid container spacing={2}>
+          <Box sx={{ px: 4, [theme.breakpoints.down('sm')]: { px: 2 } }}>
+            <Grid container spacing={2} sx={{ mt: 1 }}>
               <HorizontalList list={leadershipTeam} chunkSize={10} />
-              <Grid xs={8}>
+              <Grid xs={12} md={8} sx={{ p: 0 }}>
                 <img
                   src="img/leadershipTeamGroup.jpg"
                   alt="Auburn University Logo"
