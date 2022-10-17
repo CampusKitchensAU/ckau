@@ -5,6 +5,7 @@ import {
   LinkedIn,
   LocationOn,
   Mail,
+  Workspaces,
 } from '@mui/icons-material'
 import { Box, Divider, Link, Theme, Typography } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
@@ -54,6 +55,11 @@ const siteMapLinks: iconLink<() => string>[] = [
     icon: <Home />,
     href: () => routes.home(),
     title: 'Home',
+  },
+  {
+    icon: <Workspaces />,
+    href: () => routes.hungerFighters(),
+    title: 'Hunger Fighters',
   },
 ]
 
