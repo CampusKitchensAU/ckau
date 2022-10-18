@@ -63,7 +63,7 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
       icon: (
         <Workspaces sx={{ color: theme.palette.auburnBlue.contrastText }} />
       ),
-      fn: () => routes.home(),
+      fn: () => routes.hungerFighters(),
       title: 'Hunger Fighters',
     },
     {
