@@ -19,11 +19,11 @@ const Routes = () => {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <Set wrap={DefaultLayout}>
+        <Set wrap={DefaultLayout} prerender>
           <Route path="/hunger-fighters" page={HungerFightersPage} name="hungerFighters" />
           <Route path="/" page={HomePage} name="home" />
         </Set>
-        <Route notfound page={NotFoundPage} />
+        <Route notfound page={NotFoundPage} prerender />
       </Router>
     </ThemeProvider>
   )
