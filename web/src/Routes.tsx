@@ -19,6 +19,7 @@ const Routes = () => {
   return (
     <ThemeProvider theme={theme}>
       <Router>
+        <Route path="/test" page={TestPage} name="test" />
         <Set wrap={DefaultLayout} prerender>
           <Route path="/hunger-fighters" page={HungerFightersPage} name="hungerFighters" />
           <Route path="/" page={HomePage} name="home" />
