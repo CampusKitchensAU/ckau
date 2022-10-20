@@ -6,6 +6,7 @@ import {
   Close,
   Facebook,
   Groups,
+  Handshake,
   Home,
   Instagram,
   Mail,
@@ -65,6 +66,11 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
       ),
       fn: () => routes.hungerFighters(),
       title: 'Hunger Fighters',
+    },
+    {
+      icon: <Handshake sx={{ color: theme.palette.auburnBlue.contrastText }} />,
+      fn: () => routes.communityPartners(),
+      title: 'Community Partners',
     },
     {
       icon: <Groups sx={{ color: theme.palette.auburnBlue.contrastText }} />,
