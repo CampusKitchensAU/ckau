@@ -1,5 +1,6 @@
 import {
   Facebook,
+  Handshake,
   Home,
   Instagram,
   LinkedIn,
@@ -60,6 +61,11 @@ const siteMapLinks: iconLink<() => string>[] = [
     icon: <Workspaces />,
     href: () => routes.hungerFighters(),
     title: 'Hunger Fighters',
+  },
+  {
+    icon: <Handshake />,
+    href: () => routes.communityPartners(),
+    title: 'Community Partners',
   },
 ]
 
