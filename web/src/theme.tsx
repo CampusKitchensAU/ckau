@@ -19,6 +19,7 @@ let theme = createTheme({
     auburnOrange: {
       main: '#dd550c',
       contrastText: '#ffffff',
+      light: 'rgb(221,85,12,0.7)',
     },
     auburnBlue: {
       main: '#03244d',
