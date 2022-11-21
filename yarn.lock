@@ -21175,6 +21175,7 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@redwoodjs/core": 3.0.2
+    validator: ^13.7.0
   languageName: unknown
   linkType: soft
 
@@ -23992,6 +23993,13 @@ __metadata:
     spdx-correct: ^3.0.0
     spdx-expression-parse: ^3.0.0
   checksum: 7b91e455a8de9a0beaa9fe961e536b677da7f48c9a493edf4d4d4a87fd80a7a10267d438723364e432c2fcd00b5650b5378275cded362383ef570276e6312f4f
+  languageName: node
+  linkType: hard
+
+"validator@npm:^13.7.0":
+  version: 13.7.0
+  resolution: "validator@npm:13.7.0"
+  checksum: 234c9db98001d6f75c04174dd7f67a297728c8cb369db99f21c41ba4a254558bf91427ecdcc9017ddcd44271c9db38e96079cf432a41c92f13d96d6ca0d5c28d
   languageName: node
   linkType: hard
 
