@@ -20,6 +20,7 @@ const PageHeader = ({
         py: 2,
         mt: -3,
         [theme.breakpoints.down('sm')]: { px: 4 },
+        [theme.breakpoints.between('sm', 'md')]: { px: 6 },
       }}
     >
       <Typography variant="h2" fontWeight="bold">

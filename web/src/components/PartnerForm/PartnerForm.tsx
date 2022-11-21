@@ -20,7 +20,11 @@ const PartnerForm = () => {
   return (
     <Grid
       container
-      sx={{ bgcolor: theme.palette.auburnBlue.main, px: 2 }}
+      sx={{
+        bgcolor: theme.palette.auburnBlue.main,
+        px: 2,
+        [theme.breakpoints.down('md')]: { py: 2 },
+      }}
       flexDirection="column"
     >
       <Grid xs={12}>
@@ -42,7 +46,7 @@ const PartnerForm = () => {
       </Grid>
       <Grid xs={12} sx={{ pt: 1 }}>
         <Grid container spacing={2}>
-          <Grid xs={6}>
+          <Grid xs={12} lg={6}>
             <TextField
               id="name"
               label="Name"
@@ -83,7 +87,7 @@ const PartnerForm = () => {
               fullWidth
             />
           </Grid>
-          <Grid xs={6}>
+          <Grid xs={12} lg={6}>
             <TextField
               id="organization"
               label="Organization Name"
@@ -124,14 +128,14 @@ const PartnerForm = () => {
               fullWidth
             />
           </Grid>
-          <Grid xs={6}>
+          <Grid xs={12} lg={6}>
             <PhoneTextField
               val={phone}
               payload={setPhone}
               isValid={setPhoneIsValid}
             />
           </Grid>
-          <Grid xs={6}>
+          <Grid xs={12} lg={6}>
             <EmailTextField
               val={email}
               payload={setEmail}

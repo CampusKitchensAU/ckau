@@ -20,7 +20,7 @@ const MainContainer = ({
       sx={{
         bgcolor: '#EFEBE0',
         flexGrow: 1,
-        py: theme.spacing(3),
+        pt: theme.spacing(3),
         transition: theme.transitions.create('margin', {
           easing: theme.transitions.easing.sharp,
           duration: theme.transitions.duration.leavingScreen,

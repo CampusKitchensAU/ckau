@@ -45,9 +45,15 @@ const CommunityPartnersPage = () => {
         title="Community Partners"
         description="Our community partners are the invaluable organizations who recieve our donations and help us distribute them to those in need."
       />
-      <Grid container sx={{ [theme.breakpoints.up('lg')]: { pl: 8 } }}>
+      <Grid
+        container
+        sx={{
+          [theme.breakpoints.between('lg', 'xl')]: { px: 8 },
+          [theme.breakpoints.up('xl')]: { px: 16 },
+        }}
+      >
         {/**Community Partner List */}
-        <Grid xs={8}>
+        <Grid xs={12} md={8}>
           <List sx={{ p: 0 }}>
             {sortedCPs.map((partner, idx) => {
               return (
@@ -58,13 +64,16 @@ const CommunityPartnersPage = () => {
         </Grid>
         {/**Reach Out Form and Image */}
         <Grid
-          xs={4}
+          xs={12}
+          md={4}
           sx={{
             bgcolor: theme.palette.auburnBlue.main,
             '& > div': {
               borderLeft: '6px solid',
               borderLeftColor: theme.palette.auburnOrange.main,
+              [theme.breakpoints.down('md')]: { borderLeft: 'none' },
             },
+            [theme.breakpoints.down('md')]: { px: 4 },
           }}
         >
           <Grid container height="100%" flexDirection="column">

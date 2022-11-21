@@ -43,7 +43,7 @@ const CommunityPartnerListItem = ({
       }}
     >
       <Grid container width="100%" alignItems="center">
-        <Grid xs={6}>
+        <Grid xs={12} sm={6}>
           <ListItemText
             primary={
               <Typography variant="h5" color={theme.palette.auburnBlue.main}>
@@ -59,7 +59,17 @@ const CommunityPartnerListItem = ({
             }
           />
         </Grid>
-        <Grid xs={4} display="flex" alignItems="center">
+        <Grid
+          xs={8}
+          sm={4}
+          display="flex"
+          alignItems="center"
+          sx={{
+            [theme.breakpoints.down(350)]: {
+              width: `calc(100% * 12 / var(--Grid-columns))`,
+            },
+          }}
+        >
           <IconButton disabled={!data.email} href={'mailto:' + data.email}>
             <MailOutline
               sx={{ color: data.email && theme.palette.auburnBlue.main }}
@@ -87,7 +97,15 @@ const CommunityPartnerListItem = ({
             {data.city && data.city + ','} {data.state}
           </Typography>
         </Grid>
-        <Grid xs={2}>
+        <Grid
+          xs={4}
+          sm={2}
+          sx={{
+            [theme.breakpoints.down(350)]: {
+              width: `calc(100% * 12 / var(--Grid-columns))`,
+            },
+          }}
+        >
           <Tooltip title="coming soon!" arrow>
             <Link
               underline={data.bio ? 'hover' : 'none'}
