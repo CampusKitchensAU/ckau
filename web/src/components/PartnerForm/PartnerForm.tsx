@@ -20,7 +20,7 @@ const PartnerForm = () => {
   return (
     <Grid
       container
-      sx={{ bgcolor: theme.palette.auburnBlue.main, px: 2, height: '100%' }}
+      sx={{ bgcolor: theme.palette.auburnBlue.main, px: 2 }}
       flexDirection="column"
     >
       <Grid xs={12}>

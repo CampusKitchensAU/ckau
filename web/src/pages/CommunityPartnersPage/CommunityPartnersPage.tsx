@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-import { List, useTheme } from '@mui/material'
+import { Divider, List, useTheme } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 
 import { MetaTags } from '@redwoodjs/web'
@@ -67,7 +67,27 @@ const CommunityPartnersPage = () => {
             },
           }}
         >
-          <PartnerForm />
+          <Grid container height="100%" flexDirection="column">
+            <Grid xs={12} sx={{ pb: 4 }}>
+              <PartnerForm />
+            </Grid>
+            <Divider
+              sx={{
+                borderTopWidth: 2,
+                background: theme.palette.auburnOrange.main,
+              }}
+            />
+            <Grid xs={12} sx={{ pt: 4 }}>
+              <img
+                src={'img/Partners1.jpg'}
+                alt="executive team with community partner."
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                }}
+              />
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </>
