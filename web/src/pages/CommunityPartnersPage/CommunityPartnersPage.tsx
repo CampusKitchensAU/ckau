@@ -1,12 +1,13 @@
 import { useEffect } from 'react'
 
-import { List } from '@mui/material'
+import { List, useTheme } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 
 import { MetaTags } from '@redwoodjs/web'
 
 import CommunityPartnerListItem from 'src/components/CommunityPartnerListItem/CommunityPartnerListItem'
 import PageHeader from 'src/components/PageHeader/PageHeader'
+import PartnerForm from 'src/components/PartnerForm/PartnerForm'
 import communityPartners from 'src/data/communityPartners'
 
 interface CommunityPartner {
@@ -20,6 +21,7 @@ interface CommunityPartner {
 }
 
 const CommunityPartnersPage = () => {
+  const theme = useTheme()
   const sortedCPs = communityPartners
 
   const sortCommunityPartners = (a: CommunityPartner, b: CommunityPartner) => {
@@ -43,10 +45,10 @@ const CommunityPartnersPage = () => {
         title="Community Partners"
         description="Our community partners are the invaluable organizations who recieve our donations and help us distribute them to those in need."
       />
-      <Grid container sx={{ px: 8 }}>
+      <Grid container sx={{ [theme.breakpoints.up('lg')]: { pl: 8 } }}>
         {/**Community Partner List */}
         <Grid xs={8}>
-          <List>
+          <List sx={{ p: 0 }}>
             {sortedCPs.map((partner, idx) => {
               return (
                 <CommunityPartnerListItem key={idx} data={partner} idx={idx} />
@@ -55,7 +57,18 @@ const CommunityPartnersPage = () => {
           </List>
         </Grid>
         {/**Reach Out Form and Image */}
-        <Grid xs={4}></Grid>
+        <Grid
+          xs={4}
+          sx={{
+            bgcolor: theme.palette.auburnBlue.main,
+            '& > div': {
+              borderLeft: '6px solid',
+              borderLeftColor: theme.palette.auburnOrange.main,
+            },
+          }}
+        >
+          <PartnerForm />
+        </Grid>
       </Grid>
     </>
   )
