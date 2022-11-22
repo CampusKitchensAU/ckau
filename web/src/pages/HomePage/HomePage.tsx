@@ -10,6 +10,8 @@ import Grid from '@mui/material/Unstable_Grid2'
 
 import { MetaTags } from '@redwoodjs/web'
 
+import AnimatedStat from 'src/components/AnimatedStat/AnimatedStat'
+
 interface mainStat {
   icon: JSX.Element
   data: string
@@ -195,17 +197,19 @@ const HomePage = () => {
                   alignItems: 'center',
                 }}
               >
-                {stat.icon}
-                <Typography
-                  variant="h3"
-                  color={theme.palette.auburnOrange.main}
-                  fontWeight="bold"
-                >
-                  {stat.data}
-                </Typography>
-                <Typography variant="h5" textAlign="center">
-                  {stat.title}
-                </Typography>
+                <AnimatedStat key={idx}>
+                  {stat.icon}
+                  <Typography
+                    variant="h3"
+                    color={theme.palette.auburnOrange.main}
+                    fontWeight="bold"
+                  >
+                    {stat.data}
+                  </Typography>
+                  <Typography variant="h5" textAlign="center">
+                    {stat.title}
+                  </Typography>
+                </AnimatedStat>
               </Grid>
             )
           })}
