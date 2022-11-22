@@ -1,8 +1,7 @@
 import { AccessTime, Handshake, Restaurant, Scale } from '@mui/icons-material'
 import {
-  Box,
   Button,
-  Divider,
+  Paper,
   Typography,
   useMediaQuery,
   useTheme,
@@ -19,23 +18,23 @@ interface mainStat {
 
 const mainStats: mainStat[] = [
   {
-    icon: <Scale sx={{ fontSize: '96px' }} />,
-    data: '65,654',
+    icon: <Scale sx={{ fontSize: '72px' }} />,
+    data: '13,162+',
     title: 'Pounds of Food Recovered',
   },
   {
-    icon: <Restaurant sx={{ fontSize: '96px' }} />,
-    data: '12,843',
+    icon: <Restaurant sx={{ fontSize: '72px' }} />,
+    data: '10,213+',
     title: 'Meals Served',
   },
   {
-    icon: <AccessTime sx={{ fontSize: '96px' }} />,
-    data: '2,500',
+    icon: <AccessTime sx={{ fontSize: '72px' }} />,
+    data: '2,106+',
     title: 'Hours of Service',
   },
   {
-    icon: <Handshake sx={{ fontSize: '96px' }} />,
-    data: '56',
+    icon: <Handshake sx={{ fontSize: '72px' }} />,
+    data: '20+',
     title: 'Community Parnters',
   },
 ]
@@ -50,54 +49,168 @@ const HomePage = () => {
       {/** Hero Section */}
       <Grid
         container
-        rowGap={2}
+        rowGap={4}
+        columnGap={4}
         alignItems="center"
         justifyContent="center"
         sx={{
           px: 8,
-          paddingBottom: 4,
-          [theme.breakpoints.down('sm')]: { px: 4 },
+          pb: 16,
+          pt: 6,
+          [theme.breakpoints.down('sm')]: { px: 4, rowGap: 2 },
+          [theme.breakpoints.down('md')]: { pt: 0 },
+          [theme.breakpoints.up('xl')]: {
+            px: 80,
+            minHeight: 850,
+            flexDirection: 'column',
+          },
+          backgroundImage: `url(img/ExecTeam1.jpg)`,
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          boxShadow: `inset 0 0 0 2000px rgba(0, 0, 0, 0.55)`,
         }}
       >
-        <Grid xs={12} sm={4}>
+        <Grid xs={12} sm={8} sx={{ pt: 4 }}>
           <Typography
             variant="h1"
-            sx={{ [theme.breakpoints.down('sm')]: { textAlign: 'center' } }}
+            sx={{
+              color: theme.palette.auburnBlue.contrastText,
+              textAlign: 'center',
+              [theme.breakpoints.down('sm')]: { textAlign: 'center' },
+              fontWeight: 'bold',
+            }}
           >
             The Campus Kitchen at Auburn
           </Typography>
         </Grid>
-        <Divider
-          orientation={mobileMatch ? 'horizontal' : 'vertical'}
-          variant="middle"
-          flexItem
-          sx={{
-            borderRightWidth: 3,
-            background: theme.palette.auburnBlue.main,
-            mr: mobileMatch ? 2 : 4,
-            width: mobileMatch ? '100%' : 'auto',
-          }}
-        />
-        <Grid xs={12} sm={6}>
-          <img
-            src="img/ExecTeam1.jpg"
-            alt="Executive Team"
-            style={{
-              width: '100%',
-              height: 'auto',
+        <Grid xs={12}>
+          <Typography
+            variant="h4"
+            textAlign="center"
+            sx={{
+              color: theme.palette.auburnBlue.contrastText,
+              fontWeight: 'bold',
             }}
-          />
+          >
+            &quot;Fighting{' '}
+            <span style={{ color: theme.palette.auburnOrange.main }}>
+              food waste
+            </span>{' '}
+            and{' '}
+            <span style={{ color: theme.palette.auburnOrange.main }}>
+              hunger
+            </span>{' '}
+            in the East Central Alabama community.&quot;
+          </Typography>
+        </Grid>
+        <Grid xs={8} sm={3} xl={6}>
+          <Button
+            fullWidth
+            sx={{
+              bgcolor: theme.palette.auburnOrange.main,
+              borderRadius: 4,
+              border: 'solid 3px',
+              borderColor: theme.palette.auburnOrange.main,
+              fontWeight: 'bold',
+              transition: 'ease 0.5s',
+              '&:hover': {
+                borderColor: theme.palette.auburnOrange.main,
+                bgcolor: theme.palette.primary.main,
+                color: theme.palette.auburnOrange.main,
+                transition: 'ease 0.5s',
+              },
+            }}
+            size="large"
+            href="https://alumniq.auburn.edu/giving/to/campuskitchens"
+            target="_blank"
+            rel="noopener"
+          >
+            Donate Now
+          </Button>
+        </Grid>
+        <Grid xs={8} sm={3} xl={6}>
+          <Button
+            fullWidth
+            sx={{
+              bgcolor: theme.palette.auburnSecondaryBlue.main,
+              borderRadius: 4,
+              border: 'solid 3px',
+              borderColor: theme.palette.auburnSecondaryBlue.main,
+              fontWeight: 'bold',
+              transition: 'ease 0.5s',
+              '&:hover': {
+                borderColor: theme.palette.auburnSecondaryBlue.main,
+                bgcolor: theme.palette.primary.main,
+                color: theme.palette.auburnSecondaryBlue.main,
+                transition: 'ease 0.5s',
+              },
+            }}
+            size="large"
+          >
+            About Us
+          </Button>
         </Grid>
       </Grid>
-
-      <Box
-        sx={{ width: '100%', p: 3, bgcolor: theme.palette.auburnOrange.main }}
+      {/** Live Statistics */}
+      <Paper
+        sx={{
+          bgcolor: theme.palette.primary.main,
+          width: '80%',
+          ml: 'auto',
+          mr: 'auto',
+          borderRadius: 8,
+          mt: -8,
+          border: 'solid 4px',
+          borderColor: theme.palette.auburnBlue.main,
+          [theme.breakpoints.down('md')]: {
+            width: '85%',
+          },
+        }}
+        elevation={4}
       >
-        <Typography variant="h3" textAlign="center">
-          &quot;Fighting food waste and hunger in the East Central Alabama
-          community.&quot;
-        </Typography>
-      </Box>
+        <Grid
+          container
+          rowGap={2}
+          sx={{
+            color: theme.palette.auburnBlue.main,
+            px: 2,
+            py: 2,
+          }}
+        >
+          <Grid xs={12}>
+            <Typography variant="h4" fontWeight="bold" textAlign="center">
+              Fall 2022 Statistics
+            </Typography>
+          </Grid>
+          {mainStats.map((stat: mainStat, idx: number) => {
+            return (
+              <Grid
+                key={idx}
+                xs={12}
+                sm={3}
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                }}
+              >
+                {stat.icon}
+                <Typography
+                  variant="h3"
+                  color={theme.palette.auburnOrange.main}
+                  fontWeight="bold"
+                >
+                  {stat.data}
+                </Typography>
+                <Typography variant="h5" textAlign="center">
+                  {stat.title}
+                </Typography>
+              </Grid>
+            )
+          })}
+        </Grid>
+      </Paper>
       {/** Welcome Statement */}
       <Grid
         container
@@ -108,6 +221,7 @@ const HomePage = () => {
           px: 8,
           py: 4,
           [theme.breakpoints.down('sm')]: { px: 4, textAlign: 'center' },
+          [theme.breakpoints.up('xl')]: { minHeight: 400, px: 20 },
         }}
       >
         <Grid xs={12}>
@@ -140,49 +254,6 @@ const HomePage = () => {
           </Typography>
         </Grid>
       </Grid>
-      {/** Live Statistics */}
-      <Grid
-        container
-        rowGap={2}
-        sx={{
-          px: 8,
-          py: 4,
-          bgcolor: theme.palette.auburnBlue.main,
-          color: theme.palette.auburnBlue.contrastText,
-        }}
-      >
-        <Grid xs={12}>
-          <Typography variant="h4" fontWeight="bold" textAlign="center">
-            Live 2022 Statistics
-          </Typography>
-        </Grid>
-        {mainStats.map((stat: mainStat, idx: number) => {
-          return (
-            <Grid
-              key={idx}
-              xs={12}
-              sm={3}
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-              }}
-            >
-              {stat.icon}
-              <Typography
-                variant="h3"
-                color={theme.palette.auburnOrange.main}
-                fontWeight="bold"
-              >
-                {stat.data}
-              </Typography>
-              <Typography variant="h4" textAlign="center">
-                {stat.title}
-              </Typography>
-            </Grid>
-          )
-        })}
-      </Grid>
       <Grid
         container
         rowGap={2}
@@ -190,15 +261,19 @@ const HomePage = () => {
         alignItems="center"
         justifyContent="center"
         sx={{
-          px: 8,
-          py: 4,
-          [theme.breakpoints.down('sm')]: { px: 4, textAlign: 'center' },
+          [theme.breakpoints.down('sm')]: { px: 4, textAlign: 'center', py: 2 },
+          bgcolor: theme.palette.auburnBlue.main,
+          borderBottom: 'solid 2px',
+          borderColor: theme.palette.auburnOrange.main,
         }}
       >
-        <Grid xs={12} sm={6}>
+        <Grid xs={12} sm={6} xl={4}>
           <Grid container rowGap={2}>
             <Grid xs={12}>
-              <Grid container>
+              <Grid
+                container
+                sx={{ color: theme.palette.auburnBlue.contrastText }}
+              >
                 <Grid xs={12}>
                   <Typography variant="h4" fontWeight="bold">
                     Volunteer with us!
@@ -206,7 +281,10 @@ const HomePage = () => {
                 </Grid>
               </Grid>
               <Grid xs={12}>
-                <Typography variant="h6">
+                <Typography
+                  variant="h6"
+                  sx={{ color: theme.palette.auburnBlue.contrastText }}
+                >
                   Looking to join the fight against hunger? Click the link below
                   to find volunteer opportunities!
                 </Typography>
@@ -217,7 +295,11 @@ const HomePage = () => {
                 fullWidth
                 sx={{
                   bgcolor: theme.palette.auburnOrange.main,
-                  '&:hover': { bgcolor: theme.palette.auburnBlue.main },
+                  transition: 'ease 0.5s',
+                  '&:hover': {
+                    bgcolor: theme.palette.auburnSecondaryBlue.main,
+                    transition: 'ease 0.5s',
+                  },
                 }}
                 href="https://signup.com/group/1225782704046"
                 target="_blank"
@@ -228,7 +310,7 @@ const HomePage = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid xs={12} sm={4}>
+        <Grid xs={12} sm={6} xl={4}>
           <img
             src="img/KitchenVolunteer1.jpg"
             alt="Volunteers in Kitchen"
@@ -239,7 +321,6 @@ const HomePage = () => {
           />
         </Grid>
       </Grid>
-      {/** Volunteer Section */}
     </>
   )
 }

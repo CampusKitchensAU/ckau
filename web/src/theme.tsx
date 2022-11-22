@@ -4,10 +4,12 @@ declare module '@mui/material/styles' {
   interface Palette {
     auburnOrange: Palette['primary']
     auburnBlue: Palette['primary']
+    auburnSecondaryBlue: Palette['primary']
   }
   interface PaletteOptions {
     auburnOrange: PaletteOptions['primary']
     auburnBlue: PaletteOptions['primary']
+    auburnSecondaryBlue: PaletteOptions['primary']
   }
 }
 
@@ -23,6 +25,10 @@ let theme = createTheme({
     },
     auburnBlue: {
       main: '#03244d',
+      contrastText: '#ffffff',
+    },
+    auburnSecondaryBlue: {
+      main: '#496e9c',
       contrastText: '#ffffff',
     },
   },
