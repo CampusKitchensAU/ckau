@@ -13,6 +13,7 @@ import { Router, Route, Set } from '@redwoodjs/router'
 
 import DefaultLayout from './layouts/DefaultLayout/DefaultLayout'
 import CommunityPartnersPage from './pages/CommunityPartnersPage/CommunityPartnersPage'
+import HowItWorksPage from './pages/HowItWorksPage/HowItWorksPage'
 import HungerFightersPage from './pages/HungerFightersPage/HungerFightersPage'
 import theme from './theme'
 
@@ -21,6 +22,7 @@ const Routes = () => {
     <ThemeProvider theme={theme}>
       <Router>
         <Set wrap={DefaultLayout}>
+          <Route path="/how-it-works" page={HowItWorksPage} name="howItWorks" />
           <Route path="/community-partners" page={CommunityPartnersPage} name="communityPartners" />
           <Route path="/hunger-fighters" page={HungerFightersPage} name="hungerFighters" />
           <Route path="/" page={HomePage} name="home" />

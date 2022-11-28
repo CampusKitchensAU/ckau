@@ -10,7 +10,7 @@ const AnimatedStat = ({ children }) => {
     hidden: { opacity: 0, scale: 0 },
   }
   const control = useAnimation()
-  const [ref, inView] = useInView()
+  const [ref, inView] = useInView({ triggerOnce: true })
 
   useEffect(() => {
     if (inView) {

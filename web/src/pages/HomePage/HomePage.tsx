@@ -8,6 +8,7 @@ import {
 } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 
+import { routes, Link as RWLink } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 
 import AnimatedStat from 'src/components/AnimatedStat/AnimatedStat'
@@ -132,26 +133,28 @@ const HomePage = () => {
           </Button>
         </Grid>
         <Grid xs={8} sm={3} xl={6}>
-          <Button
-            fullWidth
-            sx={{
-              bgcolor: theme.palette.auburnSecondaryBlue.main,
-              borderRadius: 4,
-              border: 'solid 3px',
-              borderColor: theme.palette.auburnSecondaryBlue.main,
-              fontWeight: 'bold',
-              transition: 'ease 0.5s',
-              '&:hover': {
+          <RWLink to={routes.howItWorks()} style={{ textDecoration: 'none' }}>
+            <Button
+              fullWidth
+              sx={{
+                bgcolor: theme.palette.auburnSecondaryBlue.main,
+                borderRadius: 4,
+                border: 'solid 3px',
                 borderColor: theme.palette.auburnSecondaryBlue.main,
-                bgcolor: theme.palette.primary.main,
-                color: theme.palette.auburnSecondaryBlue.main,
+                fontWeight: 'bold',
                 transition: 'ease 0.5s',
-              },
-            }}
-            size="large"
-          >
-            About Us
-          </Button>
+                '&:hover': {
+                  borderColor: theme.palette.auburnSecondaryBlue.main,
+                  bgcolor: theme.palette.primary.main,
+                  color: theme.palette.auburnSecondaryBlue.main,
+                  transition: 'ease 0.5s',
+                },
+              }}
+              size="large"
+            >
+              How It Works
+            </Button>
+          </RWLink>
         </Grid>
       </Grid>
       {/** Live Statistics */}
@@ -235,26 +238,26 @@ const HomePage = () => {
         </Grid>
         <Grid xs={12} sm={6}>
           <Typography variant="h6">
-            Whether you&apos;re in walking distance to Toomer&apos;s Residence
-            Hall Basement or browsing from miles away, we&apos;re so glad
-            you&apos;re here to learn about this organization. The Campus
-            Kitchen at Auburn University (CKAU) is a student-led hunger solution
-            project located in Auburn, Alabama that recovers leftover food from
-            campus dining locations and serves it to members of our community.
-            We fight food waste and hunger all at once!
+            What once started out as a student&apos;s interest project for a
+            class, today the Campus Kitchen at Auburn University is a{' '}
+            <em>student-led 501(c)3 non-profit organization</em> located in the
+            heart of Auburn&apos;s campus. We are a hunger solutions
+            organization that has two main goals: recovering leftover food from
+            on-campus dining halls and utilizing this food to help serve members
+            of our community. <u>We fight food waste and hunger all at once!</u>
           </Typography>
         </Grid>
         <Grid xs={12} sm={6}>
           <Typography variant="h6">
-            Founded in 2014 as Auburn&apos;s chapter of the Campus Kitchens
-            Project by DC Central Kitchen (a national initiative that encouraged
-            universities to start their own food recovery chapters from
-            2001-2018), CKAU is now an independent organization sponsored by the
-            Office of Public Service in University Outreach. We are still part
-            of a much larger picture, with the Universities Fighting World
-            Hunger (UFWH) headquarters in Auburn. To date, CKAU has recovered
-            160,746 pounds of food and served 153,400 meals to members of Lee
-            County. Here&apos;s to many more!
+            The work that we do is truly a no-brainer. There is a desperate need
+            for nutritional food in Auburn&apos;s community and the greater Lee
+            County. Through our sponsorship as an organization by the Office of
+            Public Service in University Outreach, we can put this work into
+            action with our amazing team of volunteers. We are still part of a
+            much bigger picture... CKAU has recovered{' '}
+            <b>160,746+ pounds of food</b> and served <b>153,400+ meals</b> to
+            members of both Auburn University and Lee County. Here&apos;s to
+            many more!
           </Typography>
         </Grid>
       </Grid>
