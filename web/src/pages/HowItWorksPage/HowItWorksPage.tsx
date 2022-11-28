@@ -65,16 +65,28 @@ const HowItWorksPage = () => {
       <Grid
         container
         columnSpacing={2}
+        rowSpacing={2}
         sx={{
           width: '100%',
           px: 8,
           py: 4,
           [theme.breakpoints.up('xl')]: { minHeight: 400, px: 20 },
+          [theme.breakpoints.down('sm')]: { px: 4, rowSpacing: 1 },
+          m: 0,
         }}
       >
         {/** LEFT SIDE */}
-        <Grid xs={5}>
-          <Grid container rowGap={2}>
+        <Grid xs={12} lg={5}>
+          <Grid
+            container
+            rowGap={2}
+            sx={{
+              [theme.breakpoints.down('sm')]: {
+                rowGap: 1,
+                textAlign: 'center',
+              },
+            }}
+          >
             <Grid xs={12}>
               <Typography variant="h6">
                 Our dedicated{' '}
@@ -128,7 +140,7 @@ const HowItWorksPage = () => {
               <Typography variant="h6">
                 We are fortunate to have many volunteers donate their time to
                 help us with these tasks every step of the way. However, we are
-                always looking for more volunteers to help us with our mission.
+                always looking for more volunteers to help us with our mission!
                 If you are interested in volunteering, please{' '}
                 <Link
                   href="https://signup.com/group/1225782704046"
@@ -145,7 +157,7 @@ const HowItWorksPage = () => {
           {/** END LEFT SIDE */}
         </Grid>
         {/** RIGHT SIDE */}
-        <Grid xs={7}>
+        <Grid xs={12} lg={7}>
           <OperationsStepper steps={operationSteps} />
         </Grid>
       </Grid>

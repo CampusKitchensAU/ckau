@@ -35,6 +35,8 @@ const OperationsStepper = ({ steps }: { steps: stepInfo[] }) => {
         borderRadius: 3,
         border: 'solid 4px',
         borderColor: theme.palette.auburnBlue.main,
+        display: 'flex',
+        flexDirection: 'column',
       }}
     >
       <Typography
@@ -62,22 +64,35 @@ const OperationsStepper = ({ steps }: { steps: stepInfo[] }) => {
           <div key={idx}></div>
         ))}
       </AutoPlaySwipeableViews>
-      <Grid container>
-        <Grid xs={7} sx={{ p: 0 }}>
+      <Grid container flexGrow={1}>
+        <Grid xs={12} sm={7} sx={{ p: 0 }}>
           <Box
             component="img"
             src={steps[activeStep].img}
             sx={{
-              height: 400,
+              height: 412,
               display: 'block',
               overflow: 'hidden',
               width: '100%',
               objectFit: 'cover',
               objectPosition: steps[activeStep].objectPosition,
+              [theme.breakpoints.down('md')]: { height: 300 },
+              [theme.breakpoints.down(400)]: { height: 200 },
+              [theme.breakpoints.up('xl')]: { height: 600 },
             }}
           />
         </Grid>
-        <Grid xs={5} sx={{ display: 'flex', alignItems: 'center', px: 4 }}>
+        <Grid
+          xs={12}
+          sm={5}
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            px: 4,
+            [theme.breakpoints.down('sm')]: { minHeight: 125 },
+            [theme.breakpoints.down(400)]: { minHeight: 150 },
+          }}
+        >
           <Typography variant="h5" sx={{ textAlign: 'center' }}>
             {steps[activeStep].description}
           </Typography>
@@ -109,11 +124,14 @@ const OperationsStepper = ({ steps }: { steps: stepInfo[] }) => {
                 color: theme.palette.auburnSecondaryBlue.main,
                 transition: 'ease 0.5s',
               },
+              [theme.breakpoints.down('sm')]: { width: 'auto' },
             }}
           >
-            {activeStep == maxSteps - 1
-              ? steps[0].title
-              : steps[activeStep + 1].title}
+            <Box sx={{ [theme.breakpoints.down('sm')]: { display: 'none' } }}>
+              {activeStep == maxSteps - 1
+                ? steps[0].title
+                : steps[activeStep + 1].title}
+            </Box>
 
             <KeyboardArrowRight />
           </Button>
@@ -140,12 +158,15 @@ const OperationsStepper = ({ steps }: { steps: stepInfo[] }) => {
                 color: theme.palette.auburnSecondaryBlue.main,
                 transition: 'ease 0.5s',
               },
+              [theme.breakpoints.down('sm')]: { width: 'auto' },
             }}
           >
             <KeyboardArrowLeft />
-            {activeStep == 0
-              ? steps[maxSteps - 1].title
-              : steps[activeStep - 1].title}
+            <Box sx={{ [theme.breakpoints.down('sm')]: { display: 'none' } }}>
+              {activeStep == 0
+                ? steps[maxSteps - 1].title
+                : steps[activeStep - 1].title}
+            </Box>
           </Button>
         }
         sx={{
