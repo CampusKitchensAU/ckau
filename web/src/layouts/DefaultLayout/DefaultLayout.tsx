@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import {
+  Assignment,
   CameraAlt,
   ChevronLeft,
   Close,
@@ -59,6 +60,13 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
       icon: <Home sx={{ color: theme.palette.auburnBlue.contrastText }} />,
       fn: () => routes.home(),
       title: 'Home',
+    },
+    {
+      icon: (
+        <Assignment sx={{ color: theme.palette.auburnBlue.contrastText }} />
+      ),
+      fn: () => routes.howItWorks(),
+      title: 'How It Works',
     },
     {
       icon: (

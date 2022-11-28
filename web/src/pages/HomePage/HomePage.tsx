@@ -150,7 +150,7 @@ const HomePage = () => {
             }}
             size="large"
           >
-            About Us
+            How It Works
           </Button>
         </Grid>
       </Grid>
