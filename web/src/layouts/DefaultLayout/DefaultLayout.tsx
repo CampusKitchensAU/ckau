@@ -2,11 +2,11 @@ import { useState } from 'react'
 
 import {
   Assignment,
-  CameraAlt,
+  //CameraAlt,
   ChevronLeft,
   Close,
   Facebook,
-  Groups,
+  //Groups,
   Handshake,
   Home,
   Instagram,
@@ -80,16 +80,16 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
       fn: () => routes.communityPartners(),
       title: 'Community Partners',
     },
-    {
-      icon: <Groups sx={{ color: theme.palette.auburnBlue.contrastText }} />,
-      fn: () => routes.home(),
-      title: 'About Us',
-    },
-    {
-      icon: <CameraAlt sx={{ color: theme.palette.auburnBlue.contrastText }} />,
-      fn: () => routes.home(),
-      title: 'Gallery',
-    },
+    // {
+    //   icon: <Groups sx={{ color: theme.palette.auburnBlue.contrastText }} />,
+    //   fn: () => routes.home(),
+    //   title: 'About Us',
+    // },
+    // {
+    //   icon: <CameraAlt sx={{ color: theme.palette.auburnBlue.contrastText }} />,
+    //   fn: () => routes.home(),
+    //   title: 'Gallery',
+    // },
   ]
 
   return (

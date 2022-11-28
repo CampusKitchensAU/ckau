@@ -1,4 +1,5 @@
 import {
+  Assignment,
   Facebook,
   Handshake,
   Home,
@@ -56,6 +57,11 @@ const siteMapLinks: iconLink<() => string>[] = [
     icon: <Home />,
     href: () => routes.home(),
     title: 'Home',
+  },
+  {
+    icon: <Assignment />,
+    href: () => routes.howItWorks(),
+    title: 'How It Works',
   },
   {
     icon: <Workspaces />,
