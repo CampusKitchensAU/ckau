@@ -8,6 +8,7 @@ import {
 } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 
+import { routes, Link as RWLink } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 
 import AnimatedStat from 'src/components/AnimatedStat/AnimatedStat'
@@ -132,26 +133,28 @@ const HomePage = () => {
           </Button>
         </Grid>
         <Grid xs={8} sm={3} xl={6}>
-          <Button
-            fullWidth
-            sx={{
-              bgcolor: theme.palette.auburnSecondaryBlue.main,
-              borderRadius: 4,
-              border: 'solid 3px',
-              borderColor: theme.palette.auburnSecondaryBlue.main,
-              fontWeight: 'bold',
-              transition: 'ease 0.5s',
-              '&:hover': {
+          <RWLink to={routes.howItWorks()} style={{ textDecoration: 'none' }}>
+            <Button
+              fullWidth
+              sx={{
+                bgcolor: theme.palette.auburnSecondaryBlue.main,
+                borderRadius: 4,
+                border: 'solid 3px',
                 borderColor: theme.palette.auburnSecondaryBlue.main,
-                bgcolor: theme.palette.primary.main,
-                color: theme.palette.auburnSecondaryBlue.main,
+                fontWeight: 'bold',
                 transition: 'ease 0.5s',
-              },
-            }}
-            size="large"
-          >
-            How It Works
-          </Button>
+                '&:hover': {
+                  borderColor: theme.palette.auburnSecondaryBlue.main,
+                  bgcolor: theme.palette.primary.main,
+                  color: theme.palette.auburnSecondaryBlue.main,
+                  transition: 'ease 0.5s',
+                },
+              }}
+              size="large"
+            >
+              How It Works
+            </Button>
+          </RWLink>
         </Grid>
       </Grid>
       {/** Live Statistics */}

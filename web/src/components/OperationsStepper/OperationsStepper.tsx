@@ -16,6 +16,7 @@ import { autoPlay } from 'react-swipeable-views-utils'
 interface stepInfo {
   title: string
   img: string
+  objectPosition: string
   description: string
 }
 
@@ -34,7 +35,6 @@ const OperationsStepper = ({ steps }: { steps: stepInfo[] }) => {
         borderRadius: 3,
         border: 'solid 4px',
         borderColor: theme.palette.auburnBlue.main,
-        height: '100%',
       }}
     >
       <Typography
@@ -73,6 +73,7 @@ const OperationsStepper = ({ steps }: { steps: stepInfo[] }) => {
               overflow: 'hidden',
               width: '100%',
               objectFit: 'cover',
+              objectPosition: steps[activeStep].objectPosition,
             }}
           />
         </Grid>
