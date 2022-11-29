@@ -62,9 +62,14 @@ const HomePage = () => {
           pt: 6,
           [theme.breakpoints.down('sm')]: { px: 4, rowGap: 2 },
           [theme.breakpoints.down('md')]: { pt: 0 },
-          [theme.breakpoints.up('xl')]: {
-            px: 80,
+          [theme.breakpoints.between(1536, 2000)]: {
+            px: 50,
             minHeight: 850,
+            flexDirection: 'column',
+          },
+          [theme.breakpoints.up(2000)]: {
+            px: 80,
+            minHeight: 1000,
             flexDirection: 'column',
           },
           backgroundImage: `url(img/ExecTeam1.jpg)`,
