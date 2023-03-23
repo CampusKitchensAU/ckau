@@ -41,7 +41,7 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white fixed z=[1000] w-full">
+    <header className="z=[1000] fixed w-full bg-white">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -76,7 +76,7 @@ const Navbar = () => {
           <img
             className="relative -top-[18px] h-14 w-auto overflow-hidden"
             src="/logos/ckau-logo-rect-nobg.png"
-            alt=""
+            alt="The Campus Kitchen at Auburn University Logo"
           />
         </a>
         <div className="flex flex-1 justify-end gap-2">
@@ -116,7 +116,7 @@ const Navbar = () => {
               <img
                 className="relative -top-[18px] h-14 w-auto overflow-hidden"
                 src="/logos/ckau-logo-rect-nobg.png"
-                alt=""
+                alt="The Campus Kitchen at Auburn University Logo"
               />
             </a>
             <div className="flex flex-1 justify-end gap-2">
