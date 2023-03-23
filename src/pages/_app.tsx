@@ -9,8 +9,8 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <>
       <Navbar />
-      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-        <Component {...pageProps} />;
+      <main className="min-h-screen w-full pt-[72px]">
+        <Component {...pageProps} />
       </main>
     </>
   );
