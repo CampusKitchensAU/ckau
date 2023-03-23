@@ -4,6 +4,7 @@ import { api } from "~/utils/api";
 
 import "~/styles/globals.css";
 import Navbar from "~/components/Navbar";
+import Footer from "~/components/Footer";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
@@ -12,6 +13,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       <main className="min-h-screen w-full pt-[72px]">
         <Component {...pageProps} />
       </main>
+      <Footer />
     </>
   );
 };

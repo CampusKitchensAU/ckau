@@ -1,49 +1,15 @@
 import { useState } from "react";
 import { MdClose, MdMenu } from "react-icons/md";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
-
-type NavLinks = {
-  name: string;
-  href: string;
-};
-
-const navigation: NavLinks[] = [
-  { name: "How It Works", href: "/how-it-works" },
-  { name: "Our Team", href: "/team" },
-  { name: "Community Partners", href: "/partners" },
-];
-
-type SocialLinks = {
-  name: string;
-  href: string;
-  icon: JSX.Element;
-};
-
-const socialLinks: SocialLinks[] = [
-  {
-    name: "Campus Kitchen's Instagram",
-    href: "https://www.instagram.com/campuskitchen_au/",
-    icon: <FaInstagram className="h-6 w-6" />,
-  },
-  {
-    name: "Campus Kitchen's Facebook",
-    href: "https://m.facebook.com/TheCampusKitchenAU/",
-    icon: <FaFacebook className="h-6 w-6" />,
-  },
-  {
-    name: "Campus Kitchen's LinkedIn",
-    href: "https://www.linkedin.com/company/ckau/",
-    icon: <FaLinkedin className="h-6 w-6" />,
-  },
-];
+import socialLinks from "~/data/socialLinks";
+import navigation from "~/data/navLinks";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="z=[1000] fixed w-full bg-white">
+    <header className="fixed z-[1000] w-full bg-white">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -122,7 +88,7 @@ const Navbar = () => {
                 src="/logos/ckau-logo-rect-nobg.png"
                 alt="The Campus Kitchen at Auburn University Logo"
                 width={150}
-            height={100}
+                height={100}
               />
             </Link>
             <div className="flex flex-1 justify-end gap-2">
