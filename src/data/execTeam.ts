@@ -9,35 +9,60 @@ export type ExecMember = {
 };
 
 const execTeam: ExecMember[] = [
-  { name: "Elise Fitzgerald", title: "President", imageUrl: "", bio: "" },
-  { name: "Jake Gaertner", title: "VP of Operations", imageUrl: "", bio: "" },
+  {
+    name: "Elise Fitzgerald",
+    title: "President",
+    imageUrl: "/executive/Trevor-Headshot-Square.jpg",
+    bio: "",
+  },
+  {
+    name: "Jake Gaertner",
+    title: "VP of Operations",
+    imageUrl: "/executive/Trevor-Headshot-Square.jpg",
+    bio: "",
+  },
   {
     name: "Claire Congo",
     title: "VP of Campus Relations",
-    imageUrl: "",
+    imageUrl: "/executive/Trevor-Headshot-Square.jpg",
     bio: "",
   },
   {
     name: "Caroline Browne",
     title: "VP of Community Outreach",
-    imageUrl: "",
+    imageUrl: "/executive/Trevor-Headshot-Square.jpg",
     bio: "",
   },
-  { name: "Jack Schamban", title: "VP of Finance", imageUrl: "", bio: "" },
+  {
+    name: "Jack Schamban",
+    title: "VP of Finance",
+    imageUrl: "/executive/Trevor-Headshot-Square.jpg",
+    bio: "",
+  },
   {
     name: "Kendall Stephens",
     title: "VP of Communications",
-    imageUrl: "",
+    imageUrl: "/executive/Trevor-Headshot-Square.jpg",
     bio: "",
   },
-  { name: "Jack Clem", title: "VP of Events", imageUrl: "", bio: "" },
+  {
+    name: "Jack Clem",
+    title: "VP of Events",
+    imageUrl: "/executive/Trevor-Headshot-Square.jpg",
+    bio: "",
+  },
   {
     name: "Johanna Ehrhardt",
     title: "VP of Nutritional Programs",
-    imageUrl: "",
+    imageUrl: "/executive/Trevor-Headshot-Square.jpg",
     bio: "",
   },
-  { name: "Trevor Aupperle", title: "VP of Technology", imageUrl: "", bio: "" },
+  {
+    name: "Trevor Aupperle",
+    title: "VP of Technology",
+    imageUrl: "/executive/Trevor-Headshot-Square.jpg",
+    bio: "",
+  },
 ];
 
 export default execTeam;

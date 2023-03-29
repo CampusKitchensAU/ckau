@@ -3,8 +3,6 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-import { api } from "~/utils/api";
-
 type Stat = {
   label: string;
   value: string;
@@ -98,7 +96,7 @@ const Home: NextPage = () => {
                     rel="noopener"
                     className="rounded-md bg-secondary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-secondary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-400"
                   >
-                    Dontate Now
+                    Donate Now
                   </Link>
                   <Link
                     href="https://signup.com/group/1225782704046"
@@ -128,7 +126,7 @@ const Home: NextPage = () => {
                     nutritious meals to those in need. Our student-led{" "}
                     <em>501(c)3 non-profit organization</em> is dedicated to
                     empowering volunteers and promoting sustainability in
-                    Auburn's community and the broader Lee County area.
+                    Auburn&apos;s community and the broader Lee County area.
                   </p>
                   <p className="mt-10 max-w-xl text-base leading-7 text-gray-700">
                     With the support of the Office of Public Service in
@@ -222,12 +220,12 @@ const Home: NextPage = () => {
                 Volunteer with us
               </p>
               <p className="mt-6 text-base leading-7 text-gray-300">
-                Our work wouldn't be possible without the support of our amazing
-                team of volunteers. Volunteer with us to recover excess food
-                from campus dining halls and serve nutritious meals to those in
-                need. If you're ready to roll up your sleeves and join the fight
-                against hunger, click the link below to explore our volunteer
-                opportunities and sign up today!
+                Our work wouldn&apos;t be possible without the support of our
+                amazing team of volunteers. Volunteer with us to recover excess
+                food from campus dining halls and serve nutritious meals to
+                those in need. If you&apos;re ready to roll up your sleeves and
+                join the fight against hunger, click the link below to explore
+                our volunteer opportunities and sign up today!
               </p>
               <div className="mt-8">
                 <Link
