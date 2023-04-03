@@ -53,6 +53,10 @@ const config = {
         sm1: "375px",
         sm2: "425px",
       },
+      backgroundImage: {
+        404: "url('/images/Elise-Dinosaur.jpg')",
+        hideout: "url('/patterns/hideout.svg')",
+      },
     },
   },
   plugins: [],

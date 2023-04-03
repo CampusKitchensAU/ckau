@@ -1,47 +1,15 @@
 import { useState } from "react";
 import { MdClose, MdMenu } from "react-icons/md";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-
-type NavLinks = {
-  name: string;
-  href: string;
-};
-
-const navigation: NavLinks[] = [
-  { name: "How It Works", href: "/how-it-works" },
-  { name: "Our Team", href: "/team" },
-  { name: "Community Partners", href: "/partners" },
-];
-
-type SocialLinks = {
-  name: string;
-  href: string;
-  icon: JSX.Element;
-};
-
-const socialLinks: SocialLinks[] = [
-  {
-    name: "Campus Kitchen's Instagram",
-    href: "https://www.instagram.com/campuskitchen_au/",
-    icon: <FaInstagram className="h-6 w-6" />,
-  },
-  {
-    name: "Campus Kitchen's Facebook",
-    href: "https://m.facebook.com/TheCampusKitchenAU/",
-    icon: <FaFacebook className="h-6 w-6" />,
-  },
-  {
-    name: "Campus Kitchen's LinkedIn",
-    href: "https://www.linkedin.com/company/ckau/",
-    icon: <FaLinkedin className="h-6 w-6" />,
-  },
-];
+import Link from "next/link";
+import Image from "next/image";
+import socialLinks from "~/data/socialLinks";
+import navigation from "~/data/navLinks";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="z=[1000] fixed w-full bg-white">
+    <header className="fixed z-[1000] w-full bg-white">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -49,13 +17,13 @@ const Navbar = () => {
         <div className="flex flex-1">
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="text-sm font-semibold leading-6 text-gray-900"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
           <div className="flex lg:hidden">
@@ -69,19 +37,21 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-        <a href="/" className="-m-1.5 h-8 p-1.5">
+        <Link href="/" className="-m-1.5 h-8 p-1.5">
           <span className="sr-only">
             The Campus Kitchen at Auburn University
           </span>
-          <img
+          <Image
             className="relative -top-[18px] h-14 w-auto overflow-hidden"
             src="/logos/ckau-logo-rect-nobg.png"
             alt="The Campus Kitchen at Auburn University Logo"
+            width={150}
+            height={100}
           />
-        </a>
+        </Link>
         <div className="flex flex-1 justify-end gap-2">
           {socialLinks.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               target="_blank"
@@ -90,7 +60,7 @@ const Navbar = () => {
             >
               <span className="sr-only">{item.name}</span>
               {item.icon}
-            </a>
+            </Link>
           ))}
         </div>
       </nav>
@@ -109,19 +79,21 @@ const Navbar = () => {
                 <MdClose className="h-6 w-6" aria-hidden="true" />
               </button>
             </div>
-            <a href="/" className="-m-1.5 h-8 p-1.5">
+            <Link href="/" className="-m-1.5 h-8 p-1.5">
               <span className="sr-only">
                 The Campus Kitchen at Auburn University
               </span>
-              <img
+              <Image
                 className="relative -top-[18px] h-14 w-auto overflow-hidden"
                 src="/logos/ckau-logo-rect-nobg.png"
                 alt="The Campus Kitchen at Auburn University Logo"
+                width={150}
+                height={100}
               />
-            </a>
+            </Link>
             <div className="flex flex-1 justify-end gap-2">
               {socialLinks.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   target="_blank"
@@ -130,19 +102,20 @@ const Navbar = () => {
                 >
                   <span className="sr-only">{item.name}</span>
                   {item.icon}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
           <div className="mt-6 space-y-2">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
