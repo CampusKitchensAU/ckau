@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import navigation, { NavLinks } from "~/data/navLinks";
+import navigation, { type NavLinks } from "~/data/navLinks";
 import socialLinks from "~/data/socialLinks";
 
 const contactLinks: NavLinks[] = [
@@ -113,7 +113,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-16 md:flex justify-between border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
+        <div className="mt-16 justify-between border-t border-white/10 pt-8 sm:mt-20 md:flex lg:mt-24">
           <p className="text-xs leading-5 text-gray-500">
             &copy; {new Date().getFullYear()} Campus Kitchen AU. All Rights
             Reserved.
