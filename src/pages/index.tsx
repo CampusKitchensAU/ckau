@@ -21,6 +21,10 @@ const stats: Stat[] = [
     label: "Hours of Service",
     value: "3,105",
   },
+  {
+    label: "Unique Volunteers",
+    value: "300+",
+  },
 ];
 
 type TimelineEvent = {
@@ -141,7 +145,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className="lg:flex lg:flex-auto lg:justify-center">
                   <dl className="grid grid-cols-1 space-y-8 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-1 lg:text-left">
-                    <div className="flex flex-col-reverse gap-y-4">
+                    <div className="flex flex-col-reverse gap-y-4 sm:col-span-2 lg:col-span-1">
                       <dt className="text-base leading-7 text-secondary">
                         2022 - 2023
                       </dt>

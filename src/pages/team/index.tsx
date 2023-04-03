@@ -24,7 +24,7 @@ const Team: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="bg-white py-24 md:py-32 lg:py-40">
+      <div className="bg-white py-8 md:py-14 lg:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-y-20 gap-x-8 px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -43,7 +43,11 @@ const Team: NextPage = () => {
             {execTeam.map((person) => (
               <li key={person.name}>
                 <Image
-                  className="aspect-[3/2] w-full rounded-2xl object-cover"
+                  className={`aspect-[3/2] w-full rounded-2xl object-cover ${
+                    person.imagePosition
+                      ? person.imagePosition
+                      : "object-center"
+                  }`}
                   src={person.imageUrl}
                   alt={"Headshot photo of " + person.name}
                   width={600}

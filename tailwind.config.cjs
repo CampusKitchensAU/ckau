@@ -55,6 +55,7 @@ const config = {
       },
       backgroundImage: {
         404: "url('/images/Elise-Dinosaur.jpg')",
+        hideout: "url('/patterns/hideout.svg')",
       },
     },
   },
