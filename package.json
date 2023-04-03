@@ -1,32 +1,44 @@
 {
+  "name": "ckau",
+  "version": "0.1.0",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "api",
-      "web",
-      "packages/*"
-    ]
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^4.20.2",
+    "@trpc/client": "^10.9.0",
+    "@trpc/next": "^10.9.0",
+    "@trpc/react-query": "^10.9.0",
+    "@trpc/server": "^10.9.0",
+    "next": "^13.2.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
+    "superjson": "1.9.1",
+    "zod": "^3.20.6"
   },
   "devDependencies": {
-    "@redwoodjs/core": "3.0.2"
+    "@types/eslint": "^8.21.1",
+    "@types/node": "^18.14.0",
+    "@types/prettier": "^2.7.2",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "autoprefixer": "^10.4.7",
+    "eslint": "^8.34.0",
+    "eslint-config-next": "^13.2.1",
+    "postcss": "^8.4.14",
+    "prettier": "^2.8.1",
+    "prettier-plugin-tailwindcss": "^0.2.1",
+    "tailwindcss": "^3.2.0",
+    "typescript": "^4.9.5"
   },
-  "eslintConfig": {
-    "extends": "@redwoodjs/eslint-config",
-    "root": true
-  },
-  "engines": {
-    "node": ">=14.19 <=16.x",
-    "yarn": ">=1.15"
-  },
-  "prisma": {
-    "seed": "yarn rw exec seed"
-  },
-  "packageManager": "yarn@3.2.3",
-  "dependencies": {
-    "framer-motion": "^6.5.1",
-    "react-dom": "^17.0.2",
-    "react-intersection-observer": "^9.4.1",
-    "react-swipeable-views": "^0.14.0",
-    "validator": "^13.7.0"
+  "ct3aMetadata": {
+    "initVersion": "7.8.0"
   }
 }
