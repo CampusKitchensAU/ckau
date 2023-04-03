@@ -1,8 +1,8 @@
 import { type NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import PageHead from "~/components/PageHead";
 import execTeam from "~/data/execTeam";
 import leadershipTeam from "~/data/leadershipTeam";
 
@@ -15,31 +15,7 @@ const Team: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>CKAU | Team</title>
-        <meta
-          name="description"
-          content="Team page for The Campus Kitchen at Auburn University"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/favicon/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-      </Head>
+      <PageHead title="Team" description="Meet our team" />
 
       <div className="bg-white py-8 md:py-14 lg:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-y-20 gap-x-8 px-6 lg:px-8">

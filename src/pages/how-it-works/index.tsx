@@ -1,36 +1,12 @@
 import { type NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import { FaBox, FaHandsHelping, FaTruck } from "react-icons/fa";
+import PageHead from "~/components/PageHead";
 
 const HowItWorks: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>CKAU | How It Works</title>
-        <meta
-          name="description"
-          content="How it works page for The Campus Kitchen at Auburn University"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/favicon/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-      </Head>
+      <PageHead title="How It Works" description="How it works page" />
       <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <svg
