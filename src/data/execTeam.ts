@@ -20,7 +20,7 @@ const execTeam: ExecMember[] = [
   {
     name: "Jake Gaertner",
     title: "VP of Operations",
-    imageUrl: "/executive/Jake-Headshot.jpg",
+    imageUrl: "/executive/Jakes-Headshot.jpg",
     imagePosition: "object-[50%_40%]",
     bio: "",
   },
@@ -34,7 +34,7 @@ const execTeam: ExecMember[] = [
   {
     name: "Caroline Browne",
     title: "VP of Community Outreach",
-    imageUrl: "/executive/Caroline-Headshot.jpg",
+    imageUrl: "/executive/Carolines-Headshot.jpg",
     imagePosition: "object-[50%_35%]",
     bio: "",
   },
@@ -62,7 +62,7 @@ const execTeam: ExecMember[] = [
   {
     name: "Johanna Ehrhardt",
     title: "VP of Nutritional Programs",
-    imageUrl: "/executive/Johanna-Headshot.jpg",
+    imageUrl: "/executive/Johannas-Headshot.jpg",
     imagePosition: "object-[50%_25%]",
     bio: "",
   },
