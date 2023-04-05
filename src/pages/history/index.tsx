@@ -4,6 +4,8 @@ import Image from "next/image";
 import history from "~/data/history";
 import Link from "next/link";
 import { MdChevronRight } from "react-icons/md";
+import { FaAward } from "react-icons/fa";
+import awards from "~/data/awards";
 
 const images = [
   {
@@ -120,7 +122,92 @@ const History: NextPage = () => {
         </div>
       </div>
 
-      <div className="mx-auto max-w-2xl py-12 px-4 sm:px-8 lg:max-w-7xl lg:px-12">
+      <div className="my-24 sm:px-8 md:my-28">
+        <div className="mx-auto max-w-7xl lg:px-8">
+          <div className="relative px-6 sm:px-8 lg:px-12">
+            <div className="mx-auto max-w-2xl lg:max-w-7xl">
+              <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
+                <div className="md:border-l md:border-gray-100 md:pl-6">
+                  <div className="flex flex-col gap-16">
+                    {history.map((h) => (
+                      <div
+                        key={h.id}
+                        className="md:grid md:grid-cols-4 md:items-baseline"
+                      >
+                        <div className="group relative flex flex-col items-start md:col-span-3">
+                          <h2 className="text-base font-semibold tracking-tight text-gray-800">
+                            <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-gray-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl" />
+                            <Link href={h.path}>
+                              <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
+                              <span className="relative z-10">{h.title}</span>
+                            </Link>
+                          </h2>
+                          <div className="relative z-10 order-first mb-3 flex items-center pl-3.5 text-sm text-gray-400 md:hidden">
+                            <span
+                              className="absolute inset-y-0 left-0 flex items-center"
+                              aria-hidden="true"
+                            >
+                              <span className="h-4 w-0.5 rounded-full bg-gray-200" />
+                            </span>
+                            {h.years}
+                          </div>
+                          <p className="relative z-10 mt-2 text-sm text-gray-500">
+                            {h.summary}
+                          </p>
+                          <div
+                            aria-hidden="true"
+                            className="relative z-10 mt-4 flex items-center text-sm font-medium text-secondary"
+                          >
+                            Learn more
+                            <MdChevronRight
+                              aria-hidden="true"
+                              className="ml-1 h-4 w-4 stroke-current"
+                            />
+                          </div>
+                        </div>
+                        <div className="relative z-10 order-first mt-1 mb-3 hidden items-center text-sm text-gray-400 md:block">
+                          {h.years}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-10 lg:pl-16 xl:pl-24">
+                  <div className="rounded-2xl border border-zinc-100 p-6">
+                    <h2 className="flex text-sm font-semibold text-zinc-900">
+                      <FaAward className="h-6 w-6 flex-none text-secondary" />
+                      <span className="ml-3">Awards & Achievments</span>
+                    </h2>
+                    <ol className="mt-6 space-y-4">
+                      {awards.map((award) => (
+                        <li key={award.id} className="flex gap-4">
+                          <dl className="flex flex-auto flex-wrap gap-x-2">
+                            <dt className="sr-only">Company</dt>
+                            <dd className="w-full flex-none text-sm font-medium text-zinc-900 ">
+                              {award.title}
+                            </dd>
+                            <dt className="sr-only">Role</dt>
+                            <dd className="text-xs text-zinc-500">
+                              {award.from}
+                            </dd>
+                            <dt className="sr-only">Date</dt>
+                            <dd className="ml-auto text-xs text-zinc-400">
+                              {award.date}
+                            </dd>
+                          </dl>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <div className="mx-auto max-w-2xl py-12 px-4 sm:px-8 lg:max-w-7xl lg:px-12">
         <div className="md:border-l md:border-gray-100 md:pl-6">
           <div className="flex max-w-3xl flex-col space-y-16">
             {history.map((h) => (
@@ -166,7 +253,7 @@ const History: NextPage = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
