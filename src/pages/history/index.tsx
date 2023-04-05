@@ -93,11 +93,11 @@ const History: NextPage = () => {
           </div>
           <div className="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-primary-700 p-8 sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-sm lg:flex-auto lg:flex-col lg:items-start lg:gap-y-44">
             <p className="flex-none text-3xl font-bold tracking-tight text-white">
-              153,000 meals
+              180,000 meals
             </p>
             <div className="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
               <p className="text-lg font-semibold tracking-tight text-white">
-                We&apos;re proud to say we&apos;ve delivered over 153,000 meals
+                We&apos;re proud to say we&apos;ve delivered over 180,000 meals
                 to community members in need.
               </p>
               <p className="mt-2 text-base leading-7 text-gray-400">
@@ -107,7 +107,7 @@ const History: NextPage = () => {
           </div>
           <div className="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-secondary-300 p-8 sm:w-11/12 sm:max-w-xl sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-none lg:flex-auto lg:flex-col lg:items-start lg:gap-y-28">
             <p className="flex-none text-3xl font-bold tracking-tight text-white">
-              160,000 lbs
+              175,000 lbs
             </p>
             <div className="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
               <p className="text-lg font-semibold tracking-tight text-white">
