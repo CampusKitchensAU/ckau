@@ -1,8 +1,8 @@
 import { type NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
+import PageHead from "~/components/PageHead";
 import partners from "~/data/partners";
 
 const featuredPartners = [
@@ -37,31 +37,10 @@ const Partners: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>CKAU | Partners</title>
-        <meta
-          name="description"
-          content="Partners page for The Campus Kitchen at Auburn University"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/favicon/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-      </Head>
+      <PageHead
+        title="Partners"
+        description="Partners page for The Campus Kitchen at Auburn University"
+      />
 
       <div className="min-h-[calc(100vh_-_72px)] bg-white pt-8 pb-24 md:py-28 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

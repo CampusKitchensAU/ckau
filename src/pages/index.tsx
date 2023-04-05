@@ -1,7 +1,7 @@
 import { type NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import PageHead from "~/components/PageHead";
 
 type Stat = {
   label: string;
@@ -67,31 +67,11 @@ const timeline: TimelineEvent[] = [
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>CKAU | Home</title>
-        <meta
-          name="description"
-          content="Home page for The Campus Kitchen at Auburn University"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/favicon/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-      </Head>
+      <PageHead
+        title="Home"
+        description="Home page for The Campus Kitchen at Auburn University"
+      />
+
       <div className="flex w-full flex-col items-center justify-center gap-12">
         <div className="relative isolate w-full overflow-hidden bg-gray-900">
           <Image
