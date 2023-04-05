@@ -15,7 +15,7 @@ const Faq: NextPage = () => {
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-7 text-gray-600">
             Have a different question and can&apos;t find the answer you&apos;re
-            looking for? Reach out to our support team by{" "}
+            looking for? Reach out to our team by{" "}
             <a
               href="mailto:theckau@gmail.com"
               className="font-semibold text-secondary hover:text-secondary-300"
