@@ -12,6 +12,10 @@ const contactLinks: NavLinks[] = [
     name: "Email Us",
     href: "mailto:theckau@gmail.com",
   },
+  {
+    name: "FAQs",
+    href: "/faq",
+  },
 ];
 
 const Footer = () => {
