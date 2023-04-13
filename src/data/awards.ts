@@ -41,5 +41,11 @@ const awards = [
     from: "Tiger Giving Day",
     date: 2023,
   },
+  {
+    id: 8,
+    title: "The Fred & Charlene Kam “Human Touch” Service Award",
+    from: "2023 Student Involvement Awards",
+    date: 2023,
+  },
 ];
 export default awards;
