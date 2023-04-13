@@ -82,6 +82,12 @@ const Home: NextPage = () => {
           />
           <div className="mx-auto bg-gradient-to-t from-[rgb(3,36,77,0.3)] to-[rgb(3,36,77,0.1)] px-6 lg:px-8">
             <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+              <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+                <div className="relative rounded-full px-3 py-1 text-center text-sm leading-6 text-gray-100 ring-1 ring-white/60">
+                  We&apos;re proud to share we are winners of the 2023 Fred &
+                  Charlene Kam “Human Touch” Service Award!
+                </div>
+              </div>
               <div className="text-center">
                 <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
                   The Campus Kitchen at Auburn University

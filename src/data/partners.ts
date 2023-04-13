@@ -26,7 +26,7 @@ const Partners = [
   {
     name: "Community Market",
     description:
-      "An extension of the Food Bank of East Alabama, the Community Market serves brown bag lunches for families that have been identified as food insecure. A photo ID, proof of income, and proof of Lee County residence are required at an initial appointment.",
+      "An extension of the Food Bank of East Alabama, the Community Market distributes food in a friendly, grocery store environment for Lee County families in need. This is a client-choice pantry that allows people to select the food that best fits their needs. A photo ID and proof of Lee County residence are required at an initial appointment. The Community Market also offers the Brown Bag program which provides monthly supplementary groceries for Lee County seniors sixty and older with limited income. Seniors complete an application form in order to enroll in the program.",
     href: "https://foodbankofeastalabama.com/programs/the-community-market/",
   },
   {

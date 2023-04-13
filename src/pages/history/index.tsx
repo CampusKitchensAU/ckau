@@ -180,24 +180,27 @@ const History: NextPage = () => {
                       <span className="ml-3">Awards & Achievments</span>
                     </h2>
                     <ol className="mt-6 space-y-4">
-                      {awards.map((award) => (
-                        <li key={award.id} className="flex gap-4">
-                          <dl className="flex flex-auto flex-wrap gap-x-2">
-                            <dt className="sr-only">Company</dt>
-                            <dd className="w-full flex-none text-sm font-medium text-zinc-900 ">
-                              {award.title}
-                            </dd>
-                            <dt className="sr-only">Role</dt>
-                            <dd className="text-xs text-zinc-500">
-                              {award.from}
-                            </dd>
-                            <dt className="sr-only">Date</dt>
-                            <dd className="ml-auto text-xs text-zinc-400">
-                              {award.date}
-                            </dd>
-                          </dl>
-                        </li>
-                      ))}
+                      {awards
+                        .slice(0)
+                        .reverse()
+                        .map((award) => (
+                          <li key={award.id} className="flex gap-4">
+                            <dl className="flex flex-auto flex-wrap gap-x-2">
+                              <dt className="sr-only">Company</dt>
+                              <dd className="w-full flex-none text-sm font-medium text-zinc-900 ">
+                                {award.title}
+                              </dd>
+                              <dt className="sr-only">Role</dt>
+                              <dd className="text-xs text-zinc-500">
+                                {award.from}
+                              </dd>
+                              <dt className="sr-only">Date</dt>
+                              <dd className="ml-auto text-xs text-zinc-400">
+                                {award.date}
+                              </dd>
+                            </dl>
+                          </li>
+                        ))}
                     </ol>
                   </div>
                 </div>
