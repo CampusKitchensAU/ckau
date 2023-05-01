@@ -1,6 +1,7 @@
 import { type NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import PageHead from "~/components/PageHead";
 
 type Stat = {
@@ -64,7 +65,20 @@ const timeline: TimelineEvent[] = [
   },
 ];
 
+const heroImages = [
+  "/executive/Exec_Hero_1.jpg",
+  "/executive/Exec_Hero_2.jpg",
+  "/executive/Exec_Hero_3.jpg",
+  "/executive/Exec_Hero_4.jpg",
+];
+
 const Home: NextPage = () => {
+  const [heroImage, setHeroImage] = useState<string | undefined>();
+
+  useEffect(() => {
+    setHeroImage(heroImages[Math.floor(Math.random() * heroImages.length)]);
+  }, []);
+
   return (
     <>
       <PageHead
@@ -75,8 +89,8 @@ const Home: NextPage = () => {
       <div className="flex w-full flex-col items-center justify-center gap-12">
         <div className="relative isolate w-full overflow-hidden bg-gray-900">
           <Image
-            src="/images/OldExecHero.jpg"
-            alt=""
+            src={heroImage || ""}
+            alt="Hero Image for The Campus Kitchen at Auburn University"
             fill
             className=" -z-10 object-cover brightness-50 contrast-75"
           />
