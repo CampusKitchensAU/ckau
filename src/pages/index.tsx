@@ -73,7 +73,7 @@ const heroImages = [
 ];
 
 const Home: NextPage = () => {
-  const [heroImage, setHeroImage] = useState(heroImages[0]);
+  const [heroImage, setHeroImage] = useState<string | undefined>();
 
   useEffect(() => {
     setHeroImage(heroImages[Math.floor(Math.random() * heroImages.length)]);
